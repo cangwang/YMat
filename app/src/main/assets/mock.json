@@ -1,0 +1,1607 @@
+{
+    "bgColor": [
+        0,
+        0,
+        0
+    ],
+    "width": 900,
+    "height": 1000,
+    "duration": 4,
+    "frameRate": 30,
+    "targetComp": {
+        "layers": [
+            {
+                "type": "text",
+                "id": 7951,
+                "name": "sdasd ",
+                "textDocAttr": {
+                    "text": "sdasd ",
+                    "textColor": [0, 0, 0],
+                    "font": "STHeitiSC-Light",
+                    "fontFamily": "Heiti SC",
+                    "fontSize": 48,
+                    "fontStyle": "Light",
+                    "fauxBold": false,
+                    "fauxItalic": false,
+                    "lineSpacing": 57.6000022888184,
+                    "wordSpacing": 25,
+                    "textAligment": 1,
+                    "orientation": 0
+                },
+                "content": "sdasd ",
+                "transform": {
+                    "anchorPoint": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                0,
+                                0,
+                                0
+                            ]
+                        }
+                    ],
+                    "position": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                403,
+                                636,
+                                0
+                            ]
+                        },
+                        {
+                            "inFrame": 20,
+                            "value": [
+                                498,
+                                738,
+                                0
+                            ],
+                            "timeFunc": 0
+                        },
+                        {
+                            "inFrame": 28,
+                            "value": [
+                                500,
+                                836,
+                                0
+                            ],
+                            "timeFunc": 0
+                        },
+                        {
+                            "inFrame": 42,
+                            "value": [
+                                522,
+                                848,
+                                0
+                            ],
+                            "timeFunc": 0
+                        }
+                    ],
+                    "scale": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                100,
+                                100,
+                                100
+                            ]
+                        },
+                        {
+                            "inFrame": 20,
+                            "value": [
+                                150,
+                                150,
+                                100
+                            ],
+                            "timeFunc": 0
+                        }
+                    ],
+                    "opacity": [
+                        {
+                            "inFrame": 0,
+                            "value": 100
+                        },
+                        {
+                            "inFrame": 20,
+                            "value": 50,
+                            "timeFunc": 0
+                        }
+                    ],
+                    "rotationZ": [
+                        {
+                            "inFrame": 0,
+                            "value": 0
+                        },
+                        {
+                            "inFrame": 20,
+                            "value": 540,
+                            "timeFunc": 0
+                        }
+                    ]
+                },
+                "isTrackMatte": false,
+                "width": 900,
+                "height": 1000,
+                "inFrame": 0,
+                "outFrame": 120
+            },
+            {
+                "type": "precomposition",
+                "id": 7891,
+                "transform": {
+                    "anchorPoint": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                450,
+                                500,
+                                0
+                            ]
+                        }
+                    ],
+                    "position": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                690,
+                                500,
+                                0
+                            ]
+                        },
+                        {
+                            "inFrame": 30,
+                            "value": [
+                                700,
+                                571,
+                                0
+                            ],
+                            "timeFunc": 0
+                        }
+                    ],
+                    "scale": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                45,
+                                45,
+                                100
+                            ]
+                        }
+                    ],
+                    "opacity": [
+                        {
+                            "inFrame": 0,
+                            "value": 100
+                        }
+                    ],
+                    "rotationZ": [
+                        {
+                            "inFrame": 0,
+                            "value": 0
+                        }
+                    ]
+                },
+                "width": 900,
+                "height": 1000,
+                "inFrame": 19,
+                "outFrame": 120
+            },
+            {
+                "id": 5294,
+                "type": "precomposition",
+                "name": "6_bmp",
+                "transform": {
+                    "anchorPoint": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                350,
+                                350,
+                                0
+                            ]
+                        }
+                    ],
+                    "position": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                689,
+                                660,
+                                0
+                            ]
+                        }
+                    ],
+                    "scale": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                59,
+                                59,
+                                100
+                            ]
+                        }
+                    ],
+                    "opacity": [
+                        {
+                            "inFrame": 0,
+                            "value": 100
+                        }
+                    ],
+                    "rotationZ": [
+                        {
+                            "inFrame": 0,
+                            "value": 0
+                        }
+                    ]
+                },
+                "isTrackMatte": false,
+                "width": 700,
+                "height": 700,
+                "inFrame": 0,
+                "outFrame": 120
+            },
+            {
+                "type": "image",
+                "content": "avatar.png",
+                "name": "testpic",
+                "fillMode": 0,
+                "transform": {
+                    "anchorPoint": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                128,
+                                128,
+                                0
+                            ]
+                        }
+                    ],
+                    "position": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                272.978724406932,
+                                678.224075197804,
+                                -51.3980988590675
+                            ]
+                        }
+                    ],
+                    "scale": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                72.4072708213321,
+                                101.525480507134,
+                                100
+                            ]
+                        }
+                    ],
+                    "opacity": [
+                        {
+                            "inFrame": 0,
+                            "value": 100
+                        }
+                    ],
+                    "rotationX": [
+                        {
+                            "inFrame": 0,
+                            "value": 0
+                        }
+                    ],
+                    "rotationY": [
+                        {
+                            "inFrame": 0,
+                            "value": 0
+                        }
+                    ],
+                    "rotationZ": [
+                        {
+                            "inFrame": 0,
+                            "value": 0
+                        }
+                    ],
+                    "orientation": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                329.169929224771,
+                                46.6296703424972,
+                                350.789429689493
+                            ]
+                        }
+                    ]
+                },
+                "isTrackMatte": false,
+                "width": 256,
+                "height": 256,
+                "inFrame": 30,
+                "outFrame": 92
+            },
+            {
+                "type": "image",
+                "content": "a9a19f6699b64c942931cdfdf52c15e3598d0e1271ec54-TdcBeD_fw1200.png",
+                "name": "a9a19f6699b64c942931cdfdf52c15e3598d0e1271ec54-TdcBeD_fw1200.png",
+                "fillMode": 0,
+                "transform": {
+                    "anchorPoint": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                600,
+                                400.5,
+                                0
+                            ]
+                        }
+                    ],
+                    "position": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                275,
+                                669,
+                                0
+                            ]
+                        }
+                    ],
+                    "scale": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                46.1666666666667,
+                                70.9144057732713,
+                                100
+                            ]
+                        }
+                    ],
+                    "opacity": [
+                        {
+                            "inFrame": 0,
+                            "value": 100
+                        }
+                    ],
+                    "rotationZ": [
+                        {
+                            "inFrame": 0,
+                            "value": 0
+                        }
+                    ]
+                },
+                "isTrackMatte": false,
+                "width": 1200,
+                "height": 801,
+                "inFrame": 0,
+                "outFrame": 120
+            },
+            {
+                "type": "ShapeLayer",
+                "id": 8227,
+                "content": [
+                    {
+                        "type": "Rect",
+                        "name": "矩形 1",
+                        "blendMode": 1,
+                        "elements": {
+                            "rectInfo": {
+                                "direction": 1,
+                                "size": [
+                                    105.5546875,
+                                    74.8251953125001
+                                ],
+                                "position": [
+                                    0,
+                                    0
+                                ],
+                                "roundness": 0
+                            },
+                            "strokeInfo": {
+                                "blendMode": 1,
+                                "color": [
+                                    0,
+                                    0,
+                                    0,
+                                    1
+                                ],
+                                "opacity": 100,
+                                "width": 2,
+                                "lineCap": 1,
+                                "lineJoin": 1,
+                                "miterLimit": 4
+                            },
+                            "fillInfo": {
+                                "blendMode": 1,
+                                "color": [
+                                    0.5,
+                                    0.5,
+                                    0.5,
+                                    1
+                                ],
+                                "opacity": 100
+                            }
+                        },
+                        "transform": {
+                            "anchorPoint": [
+                                {
+                                    "inFrame": 0,
+                                    "value": [
+                                        0,
+                                        0
+                                    ]
+                                }
+                            ],
+                            "position": [
+                                {
+                                    "inFrame": 0,
+                                    "value": [
+                                        -155.22265625,
+                                        -334.58740234375
+                                    ]
+                                }
+                            ],
+                            "scale": [
+                                {
+                                    "inFrame": 0,
+                                    "value": [
+                                        100,
+                                        100
+                                    ]
+                                }
+                            ],
+                            "rotationZ": [
+                                {
+                                    "inFrame": 0,
+                                    "value": 0
+                                }
+                            ],
+                            "opacity": [
+                                {
+                                    "inFrame": 0,
+                                    "value": 100
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "name": "形状图层 1",
+                "transform": {
+                    "anchorPoint": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                0,
+                                0,
+                                0
+                            ]
+                        }
+                    ],
+                    "position": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                450,
+                                500,
+                                0
+                            ]
+                        }
+                    ],
+                    "scale": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                100,
+                                100,
+                                100
+                            ]
+                        }
+                    ],
+                    "opacity": [
+                        {
+                            "inFrame": 0,
+                            "value": 100
+                        }
+                    ],
+                    "rotationZ": [
+                        {
+                            "inFrame": 0,
+                            "value": 0
+                        }
+                    ]
+                },
+                "isTrackMatte": false,
+                "width": 900,
+                "height": 1000,
+                "inFrame": 0,
+                "outFrame": 120
+            },
+            {
+                "id": 8226,
+                "type": "video",
+                "content": "temp_change_264_mid.mp4",
+                "name": "temp_change_264_mid.mp4",
+                "transform": {
+                    "anchorPoint": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                540,
+                                960,
+                                0
+                            ]
+                        }
+                    ],
+                    "position": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                450,
+                                500,
+                                0
+                            ]
+                        }
+                    ],
+                    "scale": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                100,
+                                100,
+                                100
+                            ]
+                        }
+                    ],
+                    "opacity": [
+                        {
+                            "inFrame": 0,
+                            "value": 100
+                        }
+                    ],
+                    "rotationZ": [
+                        {
+                            "inFrame": 0,
+                            "value": 0
+                        }
+                    ]
+                },
+                "isTrackMatte": false,
+                "width": 1080,
+                "height": 1920,
+                "inFrame": 0,
+                "outFrame": 120
+            }
+        ]
+    },
+    "comps": [
+        {
+            "id": 8197,
+            "type": "vector",
+            "layers": [
+                {
+                    "type": "ShapeLayer",
+                    "id": 6200,
+                    "content": [
+                        {
+                            "type": "Ellipse",
+                            "name": "椭圆 1",
+                            "blendMode": 1,
+                            "elements": {
+                                "ellipseInfo": {
+                                    "direction": 1,
+                                    "size": [
+                                        159,
+                                        159
+                                    ],
+                                    "position": [
+                                        0,
+                                        0
+                                    ]
+                                },
+                                "fillInfo": {
+                                    "blendMode": 1,
+                                    "color": [
+                                        0,
+                                        0,
+                                        0,
+                                        1
+                                    ],
+                                    "opacity": 100
+                                }
+                            },
+                            "transform": {
+                                "anchorPoint": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": [
+                                            0,
+                                            0
+                                        ]
+                                    }
+                                ],
+                                "position": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": [
+                                            117.5,
+                                            127.5
+                                        ]
+                                    }
+                                ],
+                                "scale": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": [
+                                            105.933003066761,
+                                            105.933003066761
+                                        ]
+                                    }
+                                ],
+                                "rotationZ": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": 0
+                                    }
+                                ],
+                                "opacity": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": 100
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "name": "1mp4_ext_recv_avatar-aspectFill",
+                    "transform": {
+                        "anchorPoint": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    119,
+                                    213,
+                                    0
+                                ]
+                            }
+                        ],
+                        "position": [
+                            {
+                                "inFrame": 4,
+                                "value": [
+                                    570.25,
+                                    737,
+                                    0
+                                ]
+                            },
+                            {
+                                "inFrame": 14,
+                                "value": [
+                                    541.75,
+                                    692,
+                                    0
+                                ],
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 25,
+                                "value": [
+                                    563.75,
+                                    711,
+                                    0
+                                ],
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 119,
+                                "value": [
+                                    351.75,
+                                    587,
+                                    0
+                                ],
+                                "timeFunc": 0
+                            }
+                        ],
+                        "scale": [
+                            {
+                                "inFrame": 4,
+                                "value": [
+                                    83,
+                                    83,
+                                    100
+                                ]
+                            },
+                            {
+                                "inFrame": 9,
+                                "value": [
+                                    100,
+                                    100,
+                                    100
+                                ],
+                                "timeFunc": 0
+                            }
+                        ],
+                        "opacity": [
+                            {
+                                "inFrame": 4,
+                                "value": 0
+                            },
+                            {
+                                "inFrame": 8,
+                                "value": 100,
+                                "timeFunc": 0
+                            }
+                        ],
+                        "rotationZ": [
+                            {
+                                "inFrame": 14,
+                                "value": -11.1271806203884
+                            },
+                            {
+                                "inFrame": 25,
+                                "value": -2.09091484634099,
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 42,
+                                "value": -5.02723493784159,
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 63,
+                                "value": 3.51861396666629,
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 91,
+                                "value": -6.81507154437916,
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 119,
+                                "value": 2.81397280964136,
+                                "timeFunc": 0
+                            }
+                        ]
+                    },
+                    "isTrackMatte": false,
+                    "width": 900,
+                    "height": 1000,
+                    "inFrame": 0,
+                    "outFrame": 120
+                },
+                {
+                    "type": "ShapeLayer",
+                    "id": 6199,
+                    "content": [
+                        {
+                            "type": "Ellipse",
+                            "name": "椭圆 1",
+                            "blendMode": 1,
+                            "elements": {
+                                "ellipseInfo": {
+                                    "direction": 1,
+                                    "size": [
+                                        94,
+                                        94
+                                    ],
+                                    "position": [
+                                        0,
+                                        0
+                                    ]
+                                },
+                                "fillInfo": {
+                                    "blendMode": 1,
+                                    "color": [
+                                        0,
+                                        0,
+                                        0,
+                                        1
+                                    ],
+                                    "opacity": 100
+                                }
+                            },
+                            "transform": {
+                                "anchorPoint": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": [
+                                            0,
+                                            0
+                                        ]
+                                    }
+                                ],
+                                "position": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": [
+                                            -145.680108566176,
+                                            423.520946189489
+                                        ]
+                                    }
+                                ],
+                                "scale": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": [
+                                            180.335365853658,
+                                            180.335365853658
+                                        ]
+                                    }
+                                ],
+                                "rotationZ": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": 0
+                                    }
+                                ],
+                                "opacity": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": 100
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "name": "1mp4_ext_user_avatar-aspectFill",
+                    "transform": {
+                        "anchorPoint": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    -101,
+                                    223,
+                                    0
+                                ]
+                            }
+                        ],
+                        "position": [
+                            {
+                                "inFrame": 13,
+                                "value": [
+                                    365.75,
+                                    713.5,
+                                    0
+                                ]
+                            },
+                            {
+                                "inFrame": 21,
+                                "value": [
+                                    356.25,
+                                    722.5,
+                                    0
+                                ],
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 28,
+                                "value": [
+                                    350.75,
+                                    724,
+                                    0
+                                ],
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 119,
+                                "value": [
+                                    202.75,
+                                    290,
+                                    0
+                                ],
+                                "timeFunc": 0
+                            }
+                        ],
+                        "scale": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    100,
+                                    100,
+                                    100
+                                ]
+                            }
+                        ],
+                        "opacity": [
+                            {
+                                "inFrame": 13,
+                                "value": 0
+                            },
+                            {
+                                "inFrame": 18,
+                                "value": 100,
+                                "timeFunc": 0
+                            }
+                        ],
+                        "rotationZ": [
+                            {
+                                "inFrame": 13,
+                                "value": 19.2459764683598
+                            },
+                            {
+                                "inFrame": 21,
+                                "value": 0,
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 24,
+                                "value": -2.92428815102624,
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 28,
+                                "value": 1.0334239996867,
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 43,
+                                "value": 8.64666483941754,
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 65,
+                                "value": 0.83194039760514,
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 88,
+                                "value": 8.97068227282566,
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 119,
+                                "value": -0.39093255844214,
+                                "timeFunc": 0
+                            }
+                        ]
+                    },
+                    "isTrackMatte": false,
+                    "width": 900,
+                    "height": 1000,
+                    "inFrame": 0,
+                    "outFrame": 120
+                }
+            ],
+            "bgColor": [
+                0,
+                0,
+                0
+            ],
+            "width": 900,
+            "height": 1000
+        },
+        {
+            "id": 7891,
+            "type": "vector",
+            "layers": [
+                {
+                    "type": "ShapeLayer",
+                    "id": 7881,
+                    "content": [
+                        {
+                            "type": "Rect",
+                            "name": "矩形 1",
+                            "blendMode": 1,
+                            "elements": {
+                                "rectInfo": {
+                                    "direction": 1,
+                                    "size": [
+                                        192.014956971045,
+                                        118.431011420602
+                                    ],
+                                    "position": [
+                                        0,
+                                        0
+                                    ],
+                                    "roundness": 0
+                                },
+                                "strokeInfo": {
+                                    "blendMode": 1,
+                                    "color": [
+                                        0.79305303096771,
+                                        0.1382269859314,
+                                        0.1382269859314,
+                                        1
+                                    ],
+                                    "opacity": 100,
+                                    "width": 9,
+                                    "lineCap": 1,
+                                    "lineJoin": 1,
+                                    "miterLimit": 4
+                                },
+                                "fillInfo": {
+                                    "blendMode": 1,
+                                    "color": [
+                                        0,
+                                        0,
+                                        0,
+                                        1
+                                    ],
+                                    "opacity": 100
+                                }
+                            },
+                            "transform": {
+                                "anchorPoint": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": [
+                                            0,
+                                            0
+                                        ]
+                                    }
+                                ],
+                                "position": [
+                                    {
+                                        "inFrame": 13,
+                                        "value": [
+                                            -220.814189692174,
+                                            -125.357585858148
+                                        ]
+                                    },
+                                    {
+                                        "inFrame": 47,
+                                        "value": [
+                                            -155.814189692174,
+                                            -125.357585858148
+                                        ],
+                                        "timeFunc": 0
+                                    }
+                                ],
+                                "scale": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": [
+                                            100,
+                                            100
+                                        ]
+                                    }
+                                ],
+                                "rotationZ": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": 0
+                                    }
+                                ],
+                                "opacity": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": 100
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "Ellipse",
+                            "name": "椭圆 1",
+                            "blendMode": 1,
+                            "elements": {
+                                "ellipseInfo": {
+                                    "direction": 1,
+                                    "size": [
+                                        258,
+                                        258
+                                    ],
+                                    "position": [
+                                        0,
+                                        0
+                                    ]
+                                },
+                                "fillInfo": {
+                                    "blendMode": 1,
+                                    "color": [
+                                        0,
+                                        0,
+                                        0,
+                                        1
+                                    ],
+                                    "opacity": 100
+                                }
+                            },
+                            "transform": {
+                                "anchorPoint": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": [
+                                            0,
+                                            0
+                                        ]
+                                    }
+                                ],
+                                "position": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": [
+                                            159,
+                                            133
+                                        ]
+                                    }
+                                ],
+                                "scale": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": [
+                                            100,
+                                            100
+                                        ]
+                                    }
+                                ],
+                                "rotationZ": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": 0
+                                    }
+                                ],
+                                "opacity": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": 100
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "name": "mp4_ext_user_avatar-aspectFit",
+                    "transform": {
+                        "anchorPoint": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    161,
+                                    265,
+                                    0
+                                ]
+                            }
+                        ],
+                        "position": [
+                            {
+                                "inFrame": 4,
+                                "value": [
+                                    596.75,
+                                    759,
+                                    0
+                                ]
+                            },
+                            {
+                                "inFrame": 14,
+                                "value": [
+                                    568.25,
+                                    714,
+                                    0
+                                ],
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 25,
+                                "value": [
+                                    596.5,
+                                    733,
+                                    0
+                                ],
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 42,
+                                "value": [
+                                    589,
+                                    734,
+                                    0
+                                ],
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 62,
+                                "value": [
+                                    605,
+                                    732.5,
+                                    0
+                                ],
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 89,
+                                "value": [
+                                    590,
+                                    733,
+                                    0
+                                ],
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 119,
+                                "value": [
+                                    606.5,
+                                    732,
+                                    0
+                                ],
+                                "timeFunc": 0
+                            }
+                        ],
+                        "scale": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    83.1900322804478,
+                                    83.1900322804478,
+                                    100
+                                ]
+                            }
+                        ],
+                        "opacity": [
+                            {
+                                "inFrame": 4,
+                                "value": 0
+                            },
+                            {
+                                "inFrame": 10,
+                                "value": 100,
+                                "timeFunc": 0
+                            }
+                        ],
+                        "rotationZ": [
+                            {
+                                "inFrame": 0,
+                                "value": 0
+                            }
+                        ]
+                    },
+                    "isTrackMatte": false,
+                    "width": 900,
+                    "height": 1000,
+                    "inFrame": 0,
+                    "outFrame": 120
+                },
+                {
+                    "type": "image",
+                    "content": "avatar.png",
+                    "name": "avatar.png",
+                    "fillMode": 0,
+                    "transform": {
+                        "anchorPoint": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    128,
+                                    128,
+                                    0
+                                ]
+                            }
+                        ],
+                        "position": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    462,
+                                    450,
+                                    0
+                                ]
+                            },
+                            {
+                                "inFrame": 30,
+                                "value": [
+                                    426,
+                                    660,
+                                    0
+                                ],
+                                "timeFunc": 0
+                            }
+                        ],
+                        "scale": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    100,
+                                    100,
+                                    100
+                                ]
+                            }
+                        ],
+                        "opacity": [
+                            {
+                                "inFrame": 0,
+                                "value": 100
+                            }
+                        ],
+                        "rotationZ": [
+                            {
+                                "inFrame": 0,
+                                "value": 0
+                            },
+                            {
+                                "inFrame": 30,
+                                "value": 360,
+                                "timeFunc": 0
+                            }
+                        ]
+                    },
+                    "isTrackMatte": false,
+                    "width": 256,
+                    "height": 256,
+                    "inFrame": 30,
+                    "outFrame": 120
+                },
+                {
+                    "type": "ShapeLayer",
+                    "id": 7880,
+                    "content": [
+                        {
+                            "type": "Ellipse",
+                            "name": "椭圆 1",
+                            "blendMode": 1,
+                            "elements": {
+                                "ellipseInfo": {
+                                    "direction": 1,
+                                    "size": [
+                                        167,
+                                        167
+                                    ],
+                                    "position": [
+                                        0,
+                                        0
+                                    ]
+                                },
+                                "fillInfo": {
+                                    "blendMode": 1,
+                                    "color": [
+                                        0,
+                                        0,
+                                        0,
+                                        1
+                                    ],
+                                    "opacity": 100
+                                }
+                            },
+                            "transform": {
+                                "anchorPoint": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": [
+                                            0,
+                                            0
+                                        ]
+                                    }
+                                ],
+                                "position": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": [
+                                            -117.5,
+                                            180
+                                        ]
+                                    }
+                                ],
+                                "scale": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": [
+                                            92.4817835638012,
+                                            92.4817835638012
+                                        ]
+                                    }
+                                ],
+                                "rotationZ": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": 0
+                                    }
+                                ],
+                                "opacity": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": 100
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "name": "mp4_ext_recv_avatar-aspectFit",
+                    "transform": {
+                        "anchorPoint": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    -117,
+                                    259,
+                                    0
+                                ]
+                            }
+                        ],
+                        "position": [
+                            {
+                                "inFrame": 13,
+                                "value": [
+                                    360.75,
+                                    739,
+                                    0
+                                ]
+                            },
+                            {
+                                "inFrame": 21,
+                                "value": [
+                                    326.25,
+                                    743,
+                                    0
+                                ],
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 28,
+                                "value": [
+                                    318.25,
+                                    747,
+                                    0
+                                ],
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 43,
+                                "value": [
+                                    334.25,
+                                    751.5,
+                                    0
+                                ],
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 65,
+                                "value": [
+                                    321.75,
+                                    748.5,
+                                    0
+                                ],
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 91,
+                                "value": [
+                                    331.25,
+                                    748.5,
+                                    0
+                                ],
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 118,
+                                "value": [
+                                    321.75,
+                                    747,
+                                    0
+                                ],
+                                "timeFunc": 0
+                            }
+                        ],
+                        "scale": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    140,
+                                    140,
+                                    100
+                                ]
+                            }
+                        ],
+                        "opacity": [
+                            {
+                                "inFrame": 8,
+                                "value": 0
+                            },
+                            {
+                                "inFrame": 14,
+                                "value": 100,
+                                "timeFunc": 0
+                            }
+                        ],
+                        "rotationZ": [
+                            {
+                                "inFrame": 0,
+                                "value": 0
+                            }
+                        ]
+                    },
+                    "isTrackMatte": false,
+                    "width": 900,
+                    "height": 1000,
+                    "inFrame": 0,
+                    "outFrame": 120
+                },
+                {
+                    "type": "precomposition",
+                    "id": 8197,
+                    "transform": {
+                        "anchorPoint": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    450,
+                                    500,
+                                    0
+                                ]
+                            }
+                        ],
+                        "position": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    450,
+                                    500,
+                                    0
+                                ]
+                            }
+                        ],
+                        "scale": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    100,
+                                    100,
+                                    100
+                                ]
+                            }
+                        ],
+                        "opacity": [
+                            {
+                                "inFrame": 0,
+                                "value": 100
+                            }
+                        ],
+                        "rotationZ": [
+                            {
+                                "inFrame": 0,
+                                "value": 0
+                            }
+                        ]
+                    },
+                    "width": 900,
+                    "height": 1000,
+                    "inFrame": 0,
+                    "outFrame": 120
+                }
+            ],
+            "bgColor": [
+                0,
+                0,
+                0
+            ],
+            "width": 900,
+            "height": 1000
+        },
+        {
+            "id": 5294,
+            "type": "video",
+            "content": "testVideo.mp4",
+            "name": "6_bmp",
+            "bgColor": [
+                0,
+                0,
+                0
+            ],
+            "width": 700,
+            "height": 700,
+            "duration": 15,
+            "frameRate": 30
+        }
+    ],
+    "imgSource": [
+        {
+            "srcPath": "/Users/ynot16/Desktop/testYYXXX/avatar.png",
+            "desPath": "/Users/ynot16/Desktop/testYYXXX/temp/avatar.png",
+            "path": "avatar.png"
+        },
+        {
+            "srcPath": "/Users/ynot16/Desktop/testYYXXX/avatar.png",
+            "desPath": "/Users/ynot16/Desktop/testYYXXX/temp/avatar.png",
+            "path": "avatar.png"
+        },
+        {
+            "srcPath": "/Users/ynot16/Desktop/testYYXXX/a9a19f6699b64c942931cdfdf52c15e3598d0e1271ec54-TdcBeD_fw1200.png",
+            "desPath": "/Users/ynot16/Desktop/testYYXXX/temp/a9a19f6699b64c942931cdfdf52c15e3598d0e1271ec54-TdcBeD_fw1200.png",
+            "path": "a9a19f6699b64c942931cdfdf52c15e3598d0e1271ec54-TdcBeD_fw1200.png"
+        }
+    ],
+    "videoSource": [
+        {
+            "content": "testVideo.mp4",
+            "name": "6_bmp"
+        },
+        {
+            "srcPath": "/Users/ynot16/Desktop/testYYXXX/temp_change_264_mid.mp4",
+            "content": "temp_change_264_mid.mp4",
+            "name": "temp_change_264_mid.mp4"
+        }
+    ]
+}
