@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "YMatrix"
 include(":app")
-include(":ymatrix")
+include(":ymat")

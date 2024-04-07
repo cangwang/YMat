@@ -1,7 +1,7 @@
-package com.yy.ymatrix.utils
+package com.yy.ymat.utils
 
 
-object YMatrixUtils {
+object YMatUtils {
     init {
         System.loadLibrary("ymatrix")
     }
@@ -10,4 +10,6 @@ object YMatrixUtils {
      * 获取底层的textureId，用于创建和绑定surfaceView或textureView
      */
     external fun getExternalTexture(): Int
+
+    external fun setYMatConfig(json: String)
 }

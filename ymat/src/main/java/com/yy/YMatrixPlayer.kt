@@ -1,4 +1,4 @@
-package com.yy.ymatrix
+package com.yy.ymat
 
 class YMatrixPlayer {
 }

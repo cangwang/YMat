@@ -1,4 +1,4 @@
-package com.yy.ymatrix.utils
+package com.yy.ymat.utils
 
 object YMLog {
 
