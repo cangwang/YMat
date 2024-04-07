@@ -10,6 +10,9 @@ using namespace std;
 namespace ymat {
     class TexDocAttr {
     public:
+        ~TexDocAttr() {
+            textColor.clear();
+        }
         string text;
         vector<float> textColor;
         string font;

@@ -5,6 +5,9 @@
 
 #include "yminfo.h"
 
+/*
+ * 使用parson是c库因为真的非常轻量
+ */
 #include <utils/parson.h>
 
 using namespace std;
@@ -19,7 +22,11 @@ namespace ymat {
         static shared_ptr<TexDocAttr> getTextDocAttr(JSON_Object* textDocAttrObject);
         static shared_ptr<LayerInfo> getLayer(JSON_Object* layerObject);
         static shared_ptr<Transform> getTransform(JSON_Object* transformObject);
-        static void setTransformInfo(shared_ptr<list<shared_ptr<TransformBean>>> transform, JSON_Array *transformArray);
+        static shared_ptr<ShapeTransform> getShapeTransform(JSON_Object* transformObject);
+        static void setTransformInfo(list<shared_ptr<TransformBean>> transform, JSON_Array *transformArray);
         static void setValue(vector<float>* value, JSON_Array *valueArray);
+
+        static void setShapeContent(list<shared_ptr<ShapeContent>>* shapeContentList, JSON_Array *shapeContent);
+        static void setElement(shared_ptr<Element> element, JSON_Object *elementObj);
     };
 }

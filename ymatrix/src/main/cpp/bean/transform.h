@@ -7,7 +7,7 @@
 
 using namespace std;
 namespace ymat {
-    class Transform {
+    class BaseTransform {
     public:
         shared_ptr<TransformInfo> anchorPoint;
         shared_ptr<TransformInfo> position;
@@ -16,10 +16,17 @@ namespace ymat {
         shared_ptr<TransformInfo> rotationX;
         shared_ptr<TransformInfo> rotationY;
         shared_ptr<TransformInfo> rotationZ;
+    };
+
+    class Transform : public BaseTransform {
+    public:
         bool isTrackMatte;
         int width;
         int height;
         int inFrame;
         int outFrame;
+    };
+
+    class ShapeTransform : public BaseTransform {
     };
 }

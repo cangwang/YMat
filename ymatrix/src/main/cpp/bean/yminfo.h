@@ -13,14 +13,20 @@ using namespace std;
 namespace ymat {
     class YMInfo {
     public:
+        ~YMInfo() {
+            bgColor.clear();
+            comps.clear();
+            imgSource.clear();
+            videoSource.clear();
+        }
         vector<float> bgColor;
         int width;
         int height;
         int duration;
         int frameRate;
         shared_ptr<TargetComp> targetComp;
-        shared_ptr<list<Comp>> comps;
-        shared_ptr<ImgSource> imgSource;
-        shared_ptr<VideoSource> videoSource;
+        list<shared_ptr<Comp>> comps;
+        list<shared_ptr<ImgSource>> imgSource;
+        list<shared_ptr<VideoSource>> videoSource;
     };
 }

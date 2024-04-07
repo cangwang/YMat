@@ -11,9 +11,13 @@ using namespace std;
 namespace ymat {
     class Comp {
     public:
+        ~Comp() {
+//            layers.clear();
+            bgColor.clear();
+        }
         int id;
         string type;
-        shared_ptr<list<LayerInfo>> layers;
+        list<shared_ptr<LayerInfo>> layers;
         vector<float> bgColor;
         int width;
         int height;

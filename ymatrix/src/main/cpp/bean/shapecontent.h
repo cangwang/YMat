@@ -9,11 +9,12 @@
 using namespace std;
 using namespace ymat;
 namespace ymat {
-    class ShaderContent {
+    class ShapeContent {
+    public:
         string type; //Rect
         string name;
         int blendMode;
         shared_ptr<Element> elements;
-        shared_ptr<Transform> transforms;
+        shared_ptr<ShapeTransform> transforms;
     };
 }

@@ -6,12 +6,19 @@
 #include <string>
 #include <bean/transform.h>
 #include <bean/textdocattr.h>
-#include <bean/shadercontent.h>
+#include <bean/shapecontent.h>
 
 using namespace std;
 namespace ymat {
-    class LayerInfo {
+
+    class Layer {
     public:
+        virtual void init() = 0;
+    };
+
+    class LayerInfo: public Layer {
+    public:
+        void init() {};
         string type; //text->TextLayer文字 precomposition->VectorLayer预处理 image->ImageLayer图片 preComposition->vector组合
         int id;
         string name;
@@ -20,26 +27,44 @@ namespace ymat {
         shared_ptr<Transform> transform;
     };
 
-    class ShaderInfo: public LayerInfo {
+    class TextLayerInfo: public LayerInfo {
     public:
-        list<ShaderContent> shaderContents;
+        void init(){}
+    };
+
+    class SimpleLayerInfo: public LayerInfo {
+    public:
         bool isTrackMatte;
         int width;
         int height;
         int inFrame;
         int outFrame;
+        void init(){}
     };
 
-    class VideoInfo: public ShaderInfo {
-
+    class ShadeLayerInfo: public SimpleLayerInfo {
+    public:
+        ~ShadeLayerInfo() {
+            shapeContents.clear();
+        }
+        list<shared_ptr<ShapeContent>> shapeContents;
+        void init(){}
     };
 
-    class ImageInfo: public ShaderInfo {
+    class VideoLayerInfo: public SimpleLayerInfo {
+    public:
+        void init(){}
+    };
+
+    class ImageLayerInfo: public SimpleLayerInfo {
+    public:
         int fillMode;
+        void init(){}
     };
 
-    class PreCompositionInfo : public ShaderInfo {
-
+    class PreCompositionLayerInfo : public SimpleLayerInfo {
+    public:
+        void init(){}
     };
 }
 

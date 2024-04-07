@@ -7,22 +7,23 @@
 
 using namespace std;
 namespace ymat {
-    class Element {
-        shared_ptr<list<Element>> elementInfo;
-        list<ShaderTransformInfo> transform;
-    };
-
-    class ElementInfo {
-
-    };
-    class RectInfo : public ElementInfo {
+    class RectInfo {
+    public:
+        ~RectInfo() {
+            size.clear();
+            position.clear();
+        }
         int direction;
         vector<float> size;
         vector<float> position;
         int roundness;
     };
 
-    class StrokeInfo : public ElementInfo{
+    class StrokeInfo {
+    public:
+        ~StrokeInfo() {
+            color.clear();
+        }
         int blendMode;
         vector<float> color;
         int opacity;
@@ -32,15 +33,32 @@ namespace ymat {
         int miterLimit;
     };
 
-    class FillInfo : public ElementInfo{
+    class FillInfo {
+    public:
+        ~FillInfo() {
+            color.clear();
+        }
         int blendMode;
         vector<float> color;
         int opacity;
     };
 
-    class EllipseInfo : public ElementInfo{
+    class EllipseInfo {
+    public:
+        ~EllipseInfo() {
+            size.clear();
+            position.clear();
+        }
         int direction;
         vector<float> size;
         vector<float> position;
+    };
+
+    class Element {
+    public:
+        shared_ptr<RectInfo> rectInfo;
+        shared_ptr<StrokeInfo> strokeInfo;
+        shared_ptr<FillInfo> fillInfo;
+        shared_ptr<EllipseInfo> ellipseInfo;
     };
 }

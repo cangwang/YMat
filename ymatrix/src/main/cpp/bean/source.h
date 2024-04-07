@@ -6,27 +6,17 @@
 
 using namespace std;
 namespace ymat {
-    class Source {
+    class ImgSource {
     public:
         string srcPath;
         string desPath;
         string path;
     };
 
-    class ImgSource {
-    public:
-        shared_ptr<list<Source>> imgs;
-    };
-
-    class VSource {
+    class VideoSource {
     public:
         string srcPath;
         string content;
         string name;
-    };
-
-    class VideoSource {
-    public:
-        shared_ptr<list<VSource>> videos;
     };
 }

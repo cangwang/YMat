@@ -9,6 +9,9 @@ using namespace std;
 namespace ymat {
     class TargetComp {
     public:
-        shared_ptr<list<shared_ptr<LayerInfo>>> layers;
+        ~TargetComp() {
+            layers.clear();
+        }
+        list<shared_ptr<LayerInfo>> layers;
     };
 }
