@@ -7,6 +7,7 @@
 namespace ymatrix {
     class Layer {
     public:
+        void render();
 
     };
 }

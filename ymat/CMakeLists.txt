@@ -33,6 +33,9 @@ add_library(ymat
         SHARED
         # List C/C++ source files with relative paths to this CMakeLists.txt.
         src/main/cpp/ymat.cpp
+        src/main/cpp/player/ymatcontroller.cpp
+        src/main/cpp/player/ymatplayer.cpp
+        src/main/cpp/player/rendercontroller.cpp
         src/main/cpp/layer/layer.cpp
         src/main/cpp/layer/imagelayer.cpp
         src/main/cpp/layer/videolayer.cpp
