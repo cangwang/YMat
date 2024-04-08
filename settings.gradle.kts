@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "YMatrix"
+rootProject.name = "YMat"
 include(":app")
 include(":ymat")

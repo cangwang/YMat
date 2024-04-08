@@ -12,19 +12,15 @@ namespace ymat {
         shared_ptr<TransformInfo> anchorPoint;
         shared_ptr<TransformInfo> position;
         shared_ptr<TransformInfo> scale;
-        shared_ptr<TransformInfo> opacity;
-        shared_ptr<TransformInfo> rotationX;
-        shared_ptr<TransformInfo> rotationY;
-        shared_ptr<TransformInfo> rotationZ;
+        shared_ptr<TransformInfo> orientation;
+        shared_ptr<TransformSimpleInfo> opacity;
+        shared_ptr<TransformSimpleInfo> rotationX;
+        shared_ptr<TransformSimpleInfo> rotationY;
+        shared_ptr<TransformSimpleInfo> rotationZ;
     };
 
     class Transform : public BaseTransform {
     public:
-        bool isTrackMatte;
-        int width;
-        int height;
-        int inFrame;
-        int outFrame;
     };
 
     class ShapeTransform : public BaseTransform {

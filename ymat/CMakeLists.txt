@@ -29,10 +29,10 @@ project("ymat")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/jniLibs/${ANDROID_ABI})
 include_directories(${CMAKE_SOURCE_DIR} src/main/cpp)
 
-add_library(ymatrix
+add_library(ymat
         SHARED
         # List C/C++ source files with relative paths to this CMakeLists.txt.
-        src/main/cpp/ymatrix.cpp
+        src/main/cpp/ymat.cpp
         src/main/cpp/layer/layer.cpp
         src/main/cpp/layer/imagelayer.cpp
         src/main/cpp/layer/videolayer.cpp
@@ -51,7 +51,7 @@ add_library(parson
         src/main/cpp/utils/parson.c)
 
 target_link_libraries(
-        ymatrix
+        ymat
         # List libraries link to the target library
         android
         GLESv3

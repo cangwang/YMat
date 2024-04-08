@@ -20,10 +20,10 @@ namespace ymat {
         static shared_ptr<YMInfo> parse(const char* json);
         static void setColor(vector<float>* color, JSON_Array* colorArray);
         static shared_ptr<TexDocAttr> getTextDocAttr(JSON_Object* textDocAttrObject);
-        static shared_ptr<LayerInfo> getLayer(JSON_Object* layerObject);
+        static shared_ptr<SimpleLayerInfo> getLayer(JSON_Object* layerObject);
         static shared_ptr<Transform> getTransform(JSON_Object* transformObject);
-        static shared_ptr<ShapeTransform> getShapeTransform(JSON_Object* transformObject);
-        static void setTransformInfo(list<shared_ptr<TransformBean>> transform, JSON_Array *transformArray);
+        static void setTransformInfo(list<shared_ptr<TransformBean>>* transform, JSON_Array *transformArray);
+        static void setTransformInfo(list<shared_ptr<TransformSimpleBean>>* transform, JSON_Array *transformArray);
         static void setValue(vector<float>* value, JSON_Array *valueArray);
 
         static void setShapeContent(list<shared_ptr<ShapeContent>>* shapeContentList, JSON_Array *shapeContent);

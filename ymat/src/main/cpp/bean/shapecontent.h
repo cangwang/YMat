@@ -15,6 +15,6 @@ namespace ymat {
         string name;
         int blendMode;
         shared_ptr<Element> elements;
-        shared_ptr<ShapeTransform> transforms;
+        shared_ptr<Transform> transforms;
     };
 }

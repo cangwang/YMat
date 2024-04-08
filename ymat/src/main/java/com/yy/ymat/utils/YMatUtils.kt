@@ -3,7 +3,7 @@ package com.yy.ymat.utils
 
 object YMatUtils {
     init {
-        System.loadLibrary("ymatrix")
+        System.loadLibrary("ymat")
     }
 
     /**

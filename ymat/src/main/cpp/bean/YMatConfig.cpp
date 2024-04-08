@@ -51,8 +51,7 @@ shared_ptr<YMInfo> YMatConfig::parse(const char *json) {
 
         if (targetCompObject) {
             config->targetComp = make_shared<TargetComp>();
-            JSON_Object* layersObject = json_object_get_object(targetCompObject, "layers");
-            JSON_Array* layers = json_object_get_array(layersObject,"layers");
+            JSON_Array* layers = json_object_get_array(targetCompObject,"layers");
             if (layers) {
                 auto layersSize = json_array_get_count(layers);
                 for (int i = 0; i < layersSize; ++i) {
@@ -63,6 +62,7 @@ shared_ptr<YMInfo> YMatConfig::parse(const char *json) {
                 }
             }
         }
+        targetCompObject = nullptr;
 
         //解析Comp
         JSON_Array *compsArrayObject = json_object_get_array(jsonObject, "comps");
@@ -74,14 +74,27 @@ shared_ptr<YMInfo> YMatConfig::parse(const char *json) {
                 comp->type = json_object_get_string(compObj, "type");
                 comp->id = (int)json_object_get_number(compObj, "id");
 
-                JSON_Array *layerArrayObject = json_object_get_array(jsonObject, "layers");
+                JSON_Array *layerArrayObject = json_object_get_array(compObj, "layers");
                 auto layersCount = json_array_get_count(layerArrayObject);
                 for (auto i = 0; i < layersCount; ++i) {
                     comp->layers.push_back(getLayer(json_array_get_object(layerArrayObject, i)));
                 }
+                setColor(&comp->bgColor, json_object_get_array(compObj, "bgColor"));
+                comp->width = (int)json_object_get_number(compObj, "width");
+                comp->height = (int)json_object_get_number(compObj, "height");
+                if (json_object_has_value(compObj, "frameRate")) {
+                    comp->frameRate = (int)json_object_get_number(compObj, "frameRate");
+                }
+                if (json_object_has_value(compObj, "name")) {
+                    comp->name = json_object_get_string(compObj, "name");
+                }
+                if (json_object_has_value(compObj, "content")) {
+                    comp->content = json_object_get_string(compObj, "content");
+                }
                 config->comps.push_back(comp);
             }
         }
+        compsArrayObject = nullptr;
         //解析imgSource
         JSON_Array *imgArrayObject = json_object_get_array(jsonObject, "imgSource");
         if (imgArrayObject) {
@@ -95,6 +108,7 @@ shared_ptr<YMInfo> YMatConfig::parse(const char *json) {
                 config->imgSource.push_back(iSource);
             }
         }
+        imgArrayObject = nullptr;
         //解析videoSource
         JSON_Array *videoArrayObject = json_object_get_array(jsonObject, "videoSource");
         if (videoArrayObject) {
@@ -102,12 +116,16 @@ shared_ptr<YMInfo> YMatConfig::parse(const char *json) {
             for (auto i = 0; i < videoCount; ++i) {
                 JSON_Object* videoObj = json_array_get_object(videoArrayObject, i);
                 auto vSource = make_shared<VideoSource>();
-                vSource->srcPath = json_object_get_string(videoObj, "srcPath");
+                if (json_object_has_value(videoObj, "srcPath")) {
+                    vSource->srcPath = json_object_get_string(videoObj, "srcPath");
+                }
                 vSource->content = json_object_get_string(videoObj, "content");
                 vSource->name = json_object_get_string(videoObj, "name");
                 config->videoSource.push_back(vSource);
             }
         }
+        videoArrayObject = nullptr;
+        return config;
     }
     return nullptr;
 }
@@ -139,9 +157,9 @@ shared_ptr<TexDocAttr> YMatConfig::getTextDocAttr(JSON_Object *textDocAttrObject
     return textDocAttr;
 }
 
-shared_ptr<LayerInfo> YMatConfig::getLayer(JSON_Object *layerObject) {
+shared_ptr<SimpleLayerInfo> YMatConfig::getLayer(JSON_Object *layerObject) {
     string type = json_object_get_string(layerObject, "type");
-    shared_ptr<LayerInfo> layerInfo;
+    shared_ptr<SimpleLayerInfo> layerInfo;
     if (type == "text") {
         layerInfo = make_shared<TextLayerInfo>();
     } else if (type == "image") {
@@ -155,37 +173,42 @@ shared_ptr<LayerInfo> YMatConfig::getLayer(JSON_Object *layerObject) {
     }
     if (layerInfo != nullptr) {
         layerInfo->type = type;
-        layerInfo->id = (int) json_object_get_number(layerObject, "id");
-        layerInfo->name = json_object_get_string(layerObject, "name");
-        JSON_Object *textDocAttrObject = json_object_get_object(layerObject, "textDocAttr");
-        if (textDocAttrObject) {
-            layerInfo->textDocAttr = getTextDocAttr(textDocAttrObject);
+        if (json_object_has_value(layerObject, "id")) {
+            layerInfo->id = (int) json_object_get_number(layerObject, "id");
         }
-        layerInfo->content = json_object_get_string(layerObject, "content");
+        if (json_object_has_value(layerObject, "name")) {
+            layerInfo->name = json_object_get_string(layerObject, "name");
+        }
+
+        if (json_object_has_value(layerObject, "content")) {
+            if (type == "ShapeLayer") {
+                setShapeContent(&dynamic_pointer_cast<ShadeLayerInfo>(layerInfo)->shapeContents,
+                                json_object_get_array(layerObject,"content"));
+            } else {
+                layerInfo->content = json_object_get_string(layerObject, "content");
+            }
+        }
         JSON_Object *transformObject = json_object_get_object(layerObject, "transform");
         if (transformObject) {
             layerInfo->transform = getTransform(transformObject);
         }
-        if (type != "text") {
-            dynamic_pointer_cast<SimpleLayerInfo>(
-                    layerInfo)->isTrackMatte = (int) json_object_get_number(layerObject,"isTrackMatte");
-            dynamic_pointer_cast<SimpleLayerInfo>(
-                    layerInfo)->width = (int) json_object_get_number(layerObject,"width");
-            dynamic_pointer_cast<SimpleLayerInfo>(
-                    layerInfo)->height = (int) json_object_get_number(layerObject,"height");
-            dynamic_pointer_cast<SimpleLayerInfo>(
-                    layerInfo)->inFrame = (int) json_object_get_number(layerObject,"inFrame");
-            dynamic_pointer_cast<SimpleLayerInfo>(
-                    layerInfo)->outFrame = (int) json_object_get_number(layerObject,"outFrame");
 
-            if (type == "image") {
-                dynamic_pointer_cast<ImageLayerInfo>(
-                        layerInfo)->fillMode = (int) json_object_get_number(layerObject,"fillMode");
-            }
-            if (type == "shaderLayer") {
-                setShapeContent(&dynamic_pointer_cast<ShadeLayerInfo>(layerInfo)->shapeContents,
-                                json_object_get_array(layerObject,"content"));
-            }
+        layerInfo->isTrackMatte = json_object_get_boolean(layerObject,"isTrackMatte");
+        layerInfo->width = (int) json_object_get_number(layerObject,"width");
+
+        layerInfo->height = (int) json_object_get_number(layerObject,"height");
+        layerInfo->inFrame = (int) json_object_get_number(layerObject,"inFrame");
+        layerInfo->outFrame = (int) json_object_get_number(layerObject,"outFrame");
+
+        if (type == "text") {
+            JSON_Object *textDocAttrObject = json_object_get_object(layerObject, "textDocAttr");
+            dynamic_pointer_cast<TextLayerInfo>(
+                    layerInfo)->textDocAttr = getTextDocAttr(textDocAttrObject);
+        }
+
+        if (type == "image") {
+            dynamic_pointer_cast<ImageLayerInfo>(
+                    layerInfo)->fillMode = (int) json_object_get_number(layerObject,"fillMode");
         }
     }
     return layerInfo;
@@ -194,61 +217,46 @@ shared_ptr<LayerInfo> YMatConfig::getLayer(JSON_Object *layerObject) {
 shared_ptr<Transform> YMatConfig::getTransform(JSON_Object *transformObject) {
     auto transform = make_shared<Transform>();
     if (json_object_has_value(transformObject, "anchorPoint")) {
-        setTransformInfo(transform->anchorPoint->transformList, json_object_get_array(transformObject, "anchorPoint"));
+        transform->anchorPoint = make_shared<TransformInfo>();
+        setTransformInfo(&transform->anchorPoint->transformList, json_object_get_array(transformObject, "anchorPoint"));
     }
     if (json_object_has_value(transformObject, "position")) {
-        setTransformInfo(transform->position->transformList, json_object_get_array(transformObject, "position"));
+        transform->position = make_shared<TransformInfo>();
+        setTransformInfo(&transform->position->transformList, json_object_get_array(transformObject, "position"));
     }
     if (json_object_has_value(transformObject, "scale")) {
-        setTransformInfo(transform->scale->transformList, json_object_get_array(transformObject, "scale"));
+        transform->scale = make_shared<TransformInfo>();
+        setTransformInfo(&transform->scale->transformList, json_object_get_array(transformObject, "scale"));
+    }
+    if (json_object_has_value(transformObject, "orientation")) {
+        transform->orientation = make_shared<TransformInfo>();
+        setTransformInfo(&transform->orientation->transformList, json_object_get_array(transformObject, "orientation"));
     }
     if (json_object_has_value(transformObject, "opacity")) {
-        setTransformInfo(transform->opacity->transformList, json_object_get_array(transformObject, "opacity"));
+        transform->opacity = make_shared<TransformSimpleInfo>();
+        setTransformInfo(&transform->opacity->transformList, json_object_get_array(transformObject, "opacity"));
     }
     if (json_object_has_value(transformObject, "rotationX")) {
-        setTransformInfo(transform->rotationX->transformList, json_object_get_array(transformObject, "rotationX"));
+        transform->rotationX = make_shared<TransformSimpleInfo>();
+        setTransformInfo(&transform->rotationX->transformList, json_object_get_array(transformObject, "rotationX"));
     }
     if (json_object_has_value(transformObject, "rotationY")) {
-        setTransformInfo(transform->rotationY->transformList, json_object_get_array(transformObject, "rotationY"));
+        transform->rotationY = make_shared<TransformSimpleInfo>();
+        setTransformInfo(&transform->rotationY->transformList, json_object_get_array(transformObject, "rotationY"));
     }
     if (json_object_has_value(transformObject, "rotationZ")) {
-        setTransformInfo(transform->rotationZ->transformList, json_object_get_array(transformObject, "rotationZ"));
+        transform->rotationZ = make_shared<TransformSimpleInfo>();
+        setTransformInfo(&transform->rotationZ->transformList, json_object_get_array(transformObject, "rotationZ"));
     }
-    transform->isTrackMatte = json_object_get_boolean(transformObject, "isTrackMatte");
-    transform->width = (int)json_object_get_number(transformObject, "width");
-    transform->height = (int)json_object_get_number(transformObject, "height");
-    transform->inFrame = (int)json_object_get_number(transformObject, "inFrame");
-    transform->outFrame = (int)json_object_get_number(transformObject, "outFrame");
+//    transform->isTrackMatte = json_object_get_boolean(transformObject, "isTrackMatte");
+//    transform->width = (int)json_object_get_number(transformObject, "width");
+//    transform->height = (int)json_object_get_number(transformObject, "height");
+//    transform->inFrame = (int)json_object_get_number(transformObject, "inFrame");
+//    transform->outFrame = (int)json_object_get_number(transformObject, "outFrame");
     return transform;
 }
 
-shared_ptr<ShapeTransform> YMatConfig::getShapeTransform(JSON_Object *transformObject) {
-    auto transform = make_shared<ShapeTransform>();
-    if (json_object_has_value(transformObject, "anchorPoint")) {
-        setTransformInfo(transform->anchorPoint->transformList, json_object_get_array(transformObject, "anchorPoint"));
-    }
-    if (json_object_has_value(transformObject, "position")) {
-        setTransformInfo(transform->position->transformList, json_object_get_array(transformObject, "position"));
-    }
-    if (json_object_has_value(transformObject, "scale")) {
-        setTransformInfo(transform->scale->transformList, json_object_get_array(transformObject, "scale"));
-    }
-    if (json_object_has_value(transformObject, "opacity")) {
-        setTransformInfo(transform->opacity->transformList, json_object_get_array(transformObject, "opacity"));
-    }
-    if (json_object_has_value(transformObject, "rotationX")) {
-        setTransformInfo(transform->rotationX->transformList, json_object_get_array(transformObject, "rotationX"));
-    }
-    if (json_object_has_value(transformObject, "rotationY")) {
-        setTransformInfo(transform->rotationY->transformList, json_object_get_array(transformObject, "rotationY"));
-    }
-    if (json_object_has_value(transformObject, "rotationZ")) {
-        setTransformInfo(transform->rotationZ->transformList, json_object_get_array(transformObject, "rotationZ"));
-    }
-    return transform;
-}
-
-void YMatConfig::setTransformInfo(list<shared_ptr<TransformBean>> transform, JSON_Array *transformArray) {
+void YMatConfig::setTransformInfo(list<shared_ptr<TransformBean>>* transform, JSON_Array *transformArray) {
     if (transformArray) {
         auto transformSize = json_array_get_count(transformArray);
         for (int i = 0; i < transformSize; ++i) {
@@ -261,7 +269,26 @@ void YMatConfig::setTransformInfo(list<shared_ptr<TransformBean>> transform, JSO
                     transformBean->timeFunc = (int) json_object_get_number(transformBeanObject,
                                                                            "timeFunc");
                 }
-                transform.push_back(transformBean);
+                transform->push_back(transformBean);
+            }
+        }
+    }
+}
+
+void YMatConfig::setTransformInfo(list<shared_ptr<TransformSimpleBean>>* transform, JSON_Array *transformArray) {
+    if (transformArray) {
+        auto transformSize = json_array_get_count(transformArray);
+        for (int i = 0; i < transformSize; ++i) {
+            JSON_Object* transformBeanObject = json_array_get_object(transformArray, i);
+            if (transformBeanObject) {
+                auto transformBean = make_shared<TransformSimpleBean>();
+                transformBean->inFrame = (int) json_object_get_number(transformBeanObject, "inFrame");
+                transformBean->value = (int) json_object_get_number(transformBeanObject, "value");
+                if (json_object_has_value(transformBeanObject, "timeFunc")) {
+                    transformBean->timeFunc = (int) json_object_get_number(transformBeanObject,
+                                                                           "timeFunc");
+                }
+                transform->push_back(transformBean);
             }
         }
     }
@@ -293,7 +320,7 @@ void YMatConfig::setShapeContent(list<shared_ptr<ShapeContent>>* shapeContentLis
                }
                JSON_Object* transformObj = json_object_get_object(shaderContentObj, "transform");
                if (transformObj) {
-                   content->transforms = getShapeTransform(transformObj);
+                   content->transforms = getTransform(transformObj);
                }
                shapeContentList->push_back(content);
            }

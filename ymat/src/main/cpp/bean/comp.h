@@ -17,16 +17,12 @@ namespace ymat {
         }
         int id;
         string type;
-        list<shared_ptr<LayerInfo>> layers;
+        list<shared_ptr<SimpleLayerInfo>> layers;
         vector<float> bgColor;
         int width;
         int height;
-    };
-
-    class VideoComp: public Comp {
-        string content;
         string name;
-        int duration;
+        string content;
         int frameRate;
     };
 }

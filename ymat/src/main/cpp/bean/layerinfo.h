@@ -16,29 +16,24 @@ namespace ymat {
         virtual void init() = 0;
     };
 
-    class LayerInfo: public Layer {
+    class SimpleLayerInfo: public Layer {
     public:
         void init() {};
         string type; //text->TextLayer文字 precomposition->VectorLayer预处理 image->ImageLayer图片 preComposition->vector组合
         int id;
         string name;
-        shared_ptr<TexDocAttr> textDocAttr;
         string content;
         shared_ptr<Transform> transform;
-    };
-
-    class TextLayerInfo: public LayerInfo {
-    public:
-        void init(){}
-    };
-
-    class SimpleLayerInfo: public LayerInfo {
-    public:
         bool isTrackMatte;
         int width;
         int height;
         int inFrame;
         int outFrame;
+    };
+
+    class TextLayerInfo: public SimpleLayerInfo {
+    public:
+        shared_ptr<TexDocAttr> textDocAttr;
         void init(){}
     };
 

@@ -8,6 +8,14 @@
 
 using namespace std;
 namespace ymat {
+
+    class TransformSimpleBean {
+    public:
+        int inFrame;
+        int value;
+        int timeFunc = 0;
+    };
+
     class TransformBean {
     public:
         ~TransformBean() {
@@ -25,10 +33,11 @@ namespace ymat {
         list<shared_ptr<TransformBean>> transformList;
     };
 
-    class ShaderTransformInfo {
+    class TransformSimpleInfo {
     public:
-        string type; //anchorPoint position scale opacity rotationX rotationY rotationZ orientation
-        int inFrame;
-        vector<float> value;
+        ~TransformSimpleInfo() {
+            transformList.clear();
+        }
+        list<shared_ptr<TransformSimpleBean>> transformList;
     };
 }

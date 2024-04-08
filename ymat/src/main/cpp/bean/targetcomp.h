@@ -12,6 +12,6 @@ namespace ymat {
         ~TargetComp() {
             layers.clear();
         }
-        list<shared_ptr<LayerInfo>> layers;
+        list<shared_ptr<SimpleLayerInfo>> layers;
     };
 }
