@@ -9,14 +9,20 @@
 #define YMLOGE(...) __android_log_print(ANDROID_LOG_VERBOSE, LOG_TAG, __VA_ARGS__)
 
 #include <memory>
-#include "rendercontroller.h"
+#include <list>
+#include <player/rendercontroller.h>
+#include <layer/layer.h>
+#include "bean/yminfo.h"
 
 using namespace std;
-namespace ymatrix {
+namespace ymat {
     class YMatPlayer {
     public:
-
+        YMatPlayer();
+        ~YMatPlayer();
+        void parse(const char* json);
     private:
+        shared_ptr<YMInfo> ymInfo;
         shared_ptr<RenderController> renderController;
     };
 }

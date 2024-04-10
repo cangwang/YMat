@@ -12,7 +12,9 @@
 
 namespace ymatrix {
     class ShaderLayer: public Layer {
-
+    public:
+        void renderFrame() override;
+        void release() override;
     };
 
 }

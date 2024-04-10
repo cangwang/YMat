@@ -15,7 +15,9 @@
  */
 namespace ymatrix {
     class VectorLayer: public Layer {
-
+    public:
+        void renderFrame() override;
+        void release() override;
     };
 }
 

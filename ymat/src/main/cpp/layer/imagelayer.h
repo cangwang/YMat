@@ -11,7 +11,9 @@
 
 namespace ymatrix {
     class ImageLayer: public Layer {
-
+    public:
+        void renderFrame() override;
+        void release() override;
     };
 }
 

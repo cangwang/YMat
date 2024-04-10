@@ -12,6 +12,11 @@
 
 namespace ymatrix {
     class VideoLayer: public Layer {
-
+    public:
+        VideoLayer();
+        ~VideoLayer();
+        void setLayerInfo(shared_ptr<SimpleLayerInfo> layer) override;
+        void renderFrame() override;
+        void release() override;
     };
 }

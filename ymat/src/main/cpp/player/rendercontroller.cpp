@@ -4,28 +4,43 @@
 
 #include "rendercontroller.h"
 
-ymatrix::RenderController::RenderController(): eglCore(nullptr) {
+ymat::RenderController::RenderController(): eglCore(make_shared<EGLCore>()) {
 
 }
 
-ymatrix::RenderController::~RenderController() {
-
+ymat::RenderController::~RenderController() {
+    layers.clear();
 }
 
-void ymatrix::RenderController::renderFrame() {
+GLuint ymat::RenderController::initRender(ANativeWindow *window) {
+    if (eglCore && window){
+        eglCore->start(window);
+    }
 
+    width = ANativeWindow_getWidth(window);
+    height = ANativeWindow_getHeight(window);
+
+    return 0;
 }
 
-void ymatrix::RenderController::renderSwapBuffers() {
+void ymat::RenderController::renderFrame() {
+    if (!layers.empty()) {
+        for (shared_ptr<Layer> layer: layers) {
+            layer->renderFrame();
+        }
+    }
+}
+
+void ymat::RenderController::renderSwapBuffers() {
     if (eglCore) {
         eglCore->swapBuffer();
     }
 }
 
-void ymatrix::RenderController::renderClearFrame() {
+void ymat::RenderController::renderClearFrame() {
 
 }
 
-void ymatrix::RenderController::destroy() {
-
+void ymat::RenderController::destroy() {
+    eglCore->release();
 }

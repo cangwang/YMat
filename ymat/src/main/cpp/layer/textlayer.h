@@ -12,6 +12,8 @@
 
 namespace ymatrix {
     class TextLayer: public Layer {
-
+    public:
+        void renderFrame() override;
+        void release() override;
     };
 }

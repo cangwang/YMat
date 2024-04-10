@@ -3,3 +3,19 @@
 //
 
 #include "ymatplayer.h"
+
+
+
+ymat::YMatPlayer::YMatPlayer() {
+
+}
+
+ymat::YMatPlayer::~YMatPlayer() {
+
+}
+
+void ymat::YMatPlayer::parse(const char *json) {
+    if (json) {
+        auto yMatInfo = YMatConfig::parse(json);
+    }
+}

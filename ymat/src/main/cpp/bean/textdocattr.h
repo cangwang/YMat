@@ -23,7 +23,7 @@ namespace ymat {
         bool fauxItalic;
         float lineSpacing;
         int wordSpacing;
-        int textAligment;
+        int textAligment; // 0居左， 1居中 2居右
         int orientation;
     };
 }

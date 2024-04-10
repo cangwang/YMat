@@ -180,6 +180,10 @@ shared_ptr<SimpleLayerInfo> YMatConfig::getLayer(JSON_Object *layerObject) {
             layerInfo->name = json_object_get_string(layerObject, "name");
         }
 
+        if (json_object_has_value(layerObject, "isAlpha")) {
+            layerInfo->isAlpha = json_object_get_boolean(layerObject, "isAlpha");
+        }
+
         if (json_object_has_value(layerObject, "content")) {
             if (type == "ShapeLayer") {
                 setShapeContent(&dynamic_pointer_cast<ShadeLayerInfo>(layerInfo)->shapeContents,
@@ -194,6 +198,15 @@ shared_ptr<SimpleLayerInfo> YMatConfig::getLayer(JSON_Object *layerObject) {
         }
 
         layerInfo->isTrackMatte = json_object_get_boolean(layerObject,"isTrackMatte");
+        if (layerInfo->isTrackMatte) {
+            if (json_object_has_value(layerObject, "trackMatteLayer")) {
+                layerInfo->trackMatteLayer = (int) json_object_get_number(layerObject, "trackMatteLayer");
+            }
+            if (json_object_has_value(layerObject, "trackMatteType")) {
+                layerInfo->trackMatteLayer = (int) json_object_get_number(layerObject, "trackMatteType");
+            }
+        }
+
         layerInfo->width = (int) json_object_get_number(layerObject,"width");
 
         layerInfo->height = (int) json_object_get_number(layerObject,"height");
@@ -248,11 +261,6 @@ shared_ptr<Transform> YMatConfig::getTransform(JSON_Object *transformObject) {
         transform->rotationZ = make_shared<TransformSimpleInfo>();
         setTransformInfo(&transform->rotationZ->transformList, json_object_get_array(transformObject, "rotationZ"));
     }
-//    transform->isTrackMatte = json_object_get_boolean(transformObject, "isTrackMatte");
-//    transform->width = (int)json_object_get_number(transformObject, "width");
-//    transform->height = (int)json_object_get_number(transformObject, "height");
-//    transform->inFrame = (int)json_object_get_number(transformObject, "inFrame");
-//    transform->outFrame = (int)json_object_get_number(transformObject, "outFrame");
     return transform;
 }
 

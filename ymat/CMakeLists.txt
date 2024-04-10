@@ -33,6 +33,7 @@ add_library(ymat
         SHARED
         # List C/C++ source files with relative paths to this CMakeLists.txt.
         src/main/cpp/ymat.cpp
+        src/main/cpp/egl/eglcore.cpp
         src/main/cpp/player/ymatcontroller.cpp
         src/main/cpp/player/ymatplayer.cpp
         src/main/cpp/player/rendercontroller.cpp
@@ -43,7 +44,14 @@ add_library(ymat
         src/main/cpp/layer/vectorlayer.cpp
         src/main/cpp/layer/shaderlayer.cpp
         src/main/cpp/utils/shaderutil.cpp
+        src/main/cpp/utils/texcoordsutil.cpp
+        src/main/cpp/utils/vertexutil.cpp
+        src/main/cpp/utils/glfloatarray.cpp
         src/main/cpp/bean/YMatConfig.cpp
+        src/main/cpp/render/mp4render.cpp
+        src/main/cpp/render/imagerender.cpp
+        src/main/cpp/render/evarender.cpp
+        src/main/cpp/render/vectorrender.cpp
         )
 
 # Specifies libraries CMake should link to your target library. You
