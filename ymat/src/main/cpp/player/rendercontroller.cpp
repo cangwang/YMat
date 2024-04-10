@@ -42,5 +42,12 @@ void ymat::RenderController::renderClearFrame() {
 }
 
 void ymat::RenderController::destroy() {
-    eglCore->release();
+    if (!layers.empty()) {
+        for (shared_ptr<Layer> layer: layers) {
+            layer->release();
+        }
+    }
+    if (eglCore) {
+        eglCore->release();
+    }
 }
