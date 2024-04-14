@@ -2,7 +2,9 @@ package com.yy.ymat.utils
 
 import android.graphics.*
 
-
+/**
+ * created by zengjiale
+ */
 object YMBitmapUtil {
 
     fun createEmptyBitmap() : Bitmap {

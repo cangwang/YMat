@@ -11,16 +11,18 @@
 #include <bean/YMatConfig.h>
 #include <mutex>
 #include <player/ymatcontroller.h>
+#include <utils/ymlog.h>
 
 #define LOG_TAG "YMat"
-#define YMLOGV(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
-#define YMLOGE(...) __android_log_print(ANDROID_LOG_VERBOSE, LOG_TAG, __VA_ARGS__)
+#define YMLOGV(...)  ymat::YMLog::get()->i(LOG_TAG, __VA_ARGS__)
+#define YMLOGE(...)  ymat::YMLog::get()->e(LOG_TAG, __VA_ARGS__)
 
-#define YMat(sig) Java_com_yy_ymat_utils_YMatUtils_##sig
+#define YMat(sig) Java_com_yy_ymat_utils_YMatJniUtils_##sig
 
 using namespace std;
 mutex mtx;
 shared_ptr<YMatController> yMatController;
+jobject elog;
 
 extern "C" {
 
@@ -36,6 +38,30 @@ JNIEXPORT jint JNICALL YMat(setYMatConfig)(
     int id = yMatController->addYMat(cJson);
     env->ReleaseStringUTFChars(json, cJson);
     return id;
+}
+
+JNIEXPORT void JNICALL YMat(renderFrame)(
+        JNIEnv *env,
+        jobject instance, jint playerId) {
+
+}
+
+JNIEXPORT void JNICALL YMat(setLog)(
+        JNIEnv *env,
+        jobject instance, jobject log) {
+    YMLOGV("nativeSetListener");
+
+    JavaVM *javaVm;
+    if (env->GetJavaVM(&javaVm) != JNI_OK) {
+        return;
+    }
+    if (elog) {
+        env->DeleteGlobalRef(elog);
+    }
+    elog = env->NewGlobalRef(log);
+
+    YMLog::get()->setJavaVM(javaVm);
+    YMLog::get()->setELog(elog);
 }
 
 }

@@ -3,7 +3,7 @@ package com.duowan.ymatrix
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.yy.ymat.utils.YMatUtils
+import com.yy.ymat.utils.YMatJniUtils
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val json = readJsonFromAsset(this, "mock.json")
-        YMatUtils.setYMatConfig(json)
+        YMatJniUtils.setYMatConfig(json)
     }
 
     fun readJsonFromAsset(context: Context, fileName: String): String {

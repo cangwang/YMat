@@ -1,5 +1,8 @@
 package com.yy.ymat.utils
 
+/**
+ * created by zengjiale
+ */
 class SpeedControlUtil {
 
     companion object {

@@ -1,10 +1,14 @@
 package com.yy.ymat.utils
 
-
-object YMatUtils {
+/**
+ * created by zengjiale
+ */
+object YMatJniUtils {
     init {
         System.loadLibrary("ymat")
     }
 
     external fun setYMatConfig(json: String): Int
+
+    external fun renderFrame(playeId: Int)
 }

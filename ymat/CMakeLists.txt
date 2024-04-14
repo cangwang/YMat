@@ -47,6 +47,7 @@ add_library(ymat
         src/main/cpp/utils/texcoordsutil.cpp
         src/main/cpp/utils/vertexutil.cpp
         src/main/cpp/utils/glfloatarray.cpp
+        src/main/cpp/utils/ymlog.cpp
         src/main/cpp/bean/YMatConfig.cpp
         src/main/cpp/render/render.cpp
         src/main/cpp/render/mp4render.cpp

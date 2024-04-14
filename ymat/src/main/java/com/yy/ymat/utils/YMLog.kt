@@ -1,5 +1,8 @@
 package com.yy.ymat.utils
 
+/**
+ * created by zengjiale
+ */
 object YMLog {
 
     var isDebug = false

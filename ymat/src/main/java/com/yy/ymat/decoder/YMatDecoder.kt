@@ -3,8 +3,8 @@ package com.yy.ymat.decoder
 import android.os.HandlerThread
 import android.os.Handler
 import android.util.Log
+import com.yy.ymat.utils.HandlerHolder
 import com.yy.ymat.utils.YMLog
-import com.yy.ymat.utils.YMatUtils
 import com.yy.ymat.utils.SpeedControlUtil
 
 abstract class YMatDecoder() {
@@ -77,4 +77,3 @@ abstract class YMatDecoder() {
     }
 }
 
-data class HandlerHolder(var thread: HandlerThread?, var handler: Handler?)
