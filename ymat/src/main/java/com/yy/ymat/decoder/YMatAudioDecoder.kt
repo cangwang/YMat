@@ -6,6 +6,10 @@ import android.media.AudioTrack
 import android.media.MediaCodec
 import android.media.MediaExtractor
 import android.media.MediaFormat
+import com.yy.ymat.bean.AudioDecodeInfo
+import com.yy.ymat.bean.VideoDecodeInfo
+import com.yy.ymat.bean.YMatMediaDataSource
+import com.yy.ymat.bean.YMatPlayerInfo
 import com.yy.ymat.utils.HandlerHolder
 import com.yy.ymat.utils.YMLog
 import com.yy.ymat.utils.YMMediaUtil
@@ -14,8 +18,9 @@ import java.lang.RuntimeException
 
 /**
  * created by zengjiale
- */0
-class YMatAudioDecoder {
+ */
+class YMatAudioDecoder(val decodeInfo: AudioDecodeInfo,
+                       val playerInfo: YMatPlayerInfo) {
     private val TAG = "YMatAudioDecoder"
 
     var extractor: MediaExtractor? = null
@@ -29,11 +34,11 @@ class YMatAudioDecoder {
     var needDestroy = false
     var isPause = false
     private fun prepareThread(): Boolean {
-        return YMatThread.createThread(decodeThread!!, "ymat_decode_thread_audio")
+        return YMatThread.createThread(decodeThread, "ymat_decode_thread_audio")
 
     }
 
-    fun start(evaFileContainer: IEvaFileContainer) {
+    fun start(mediaSource: YMatMediaDataSource) {
         isStopReq = false
         needDestroy = false
         if (!prepareThread()) return
@@ -43,7 +48,7 @@ class YMatAudioDecoder {
         isRunning = true
         decodeThread.handler?.post {
             try {
-                startPlay(evaFileContainer)
+                startPlay(mediaSource)
                 isPause = false
             } catch (e: Throwable) {
                 YMLog.e(TAG, "Audio exception=$e", e)
@@ -66,8 +71,8 @@ class YMatAudioDecoder {
         isStopReq = true
     }
 
-    private fun startPlay(evaFileContainer: IEvaFileContainer) {
-        val extractor = YMMediaUtil.getExtractor(evaFileContainer)
+    private fun startPlay(mediaSource: YMatMediaDataSource) {
+        val extractor = YMMediaUtil.getExtractor(mediaSource)
         this.extractor = extractor
         val audioIndex = YMMediaUtil.selectAudioTrack(extractor)
         if (audioIndex < 0) {
@@ -88,13 +93,13 @@ class YMatAudioDecoder {
         val decoder = MediaCodec.createDecoderByType(mime).apply {
             configure(format, null, null, 0)
             //跳转到需要的跳转位置
-            if (playerEva.startPoint > 0) {
+            if (decodeInfo.startPoint > 0) {
                 //等待视频端设置sampleTime位置，因为音频和视频的p帧并不是相同，所以需要锚定以视频的时间为准
-                while (playerEva.sampleTime == 0L) {
+                while (decodeInfo.sampleTime == 0L) {
                     continue
                 }
-                extractor.seekTo(playerEva.sampleTime, MediaExtractor.SEEK_TO_CLOSEST_SYNC)
-                YMLog.i(TAG, "startPoint ${playerEva.startPoint}, sampleTime：${extractor.sampleTime}")
+                extractor.seekTo(decodeInfo.sampleTime, MediaExtractor.SEEK_TO_CLOSEST_SYNC)
+                YMLog.i(TAG, "startPoint ${decodeInfo.startPoint}, sampleTime：${extractor.sampleTime}")
                 extractor.advance()
             }
 
@@ -109,8 +114,8 @@ class YMatAudioDecoder {
         var sampleRate = format.getInteger(MediaFormat.KEY_SAMPLE_RATE)
         val channelConfig = getChannelConfig(format.getInteger(MediaFormat.KEY_CHANNEL_COUNT))
 
-        if (playerEva.audioSpeed != 1.0f) { //设置音频播放速度
-            sampleRate = (sampleRate * playerEva.audioSpeed).toInt()
+        if (decodeInfo.audioSpeed != 1.0f) { //设置音频播放速度
+            sampleRate = (sampleRate * decodeInfo.audioSpeed).toInt()
         }
 
         val bufferSize = AudioTrack.getMinBufferSize(sampleRate, channelConfig, AudioFormat.ENCODING_PCM_16BIT)
@@ -211,11 +216,9 @@ class YMatAudioDecoder {
     }
 
     private fun destroyInner() {
-        if (playerEva.isDetachedFromWindow) {
-            YMLog.i(TAG, "destroyThread")
-            decodeThread.handler?.removeCallbacksAndMessages(null)
-            decodeThread.thread = YMatThread.quitSafely(decodeThread.thread)
-        }
+        YMLog.i(TAG, "destroyThread")
+        decodeThread.handler?.removeCallbacksAndMessages(null)
+        decodeThread.thread = YMatThread.quitSafely(decodeThread.thread)
     }
 
     private fun getChannelConfig(channelCount: Int): Int {

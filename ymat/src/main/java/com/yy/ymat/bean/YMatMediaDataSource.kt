@@ -2,7 +2,9 @@ package com.yy.ymat.bean
 
 import android.media.MediaDataSource
 
-class YMatMediaDataSource(private val mediaData: ByteArray): MediaDataSource() {
+class YMatMediaDataSource(val extend: Int, val mediaData: ByteArray): MediaDataSource() {
+
+    var path = "" //自定义本地资源地址，如为空则取默认内容
 
     override fun close() {
 

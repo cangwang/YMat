@@ -3,11 +3,11 @@
 //
 
 #pragma once
-#include <list>
+
 #include <bean/targetcomp.h>
 #include <bean/comp.h>
-#include <bean/source.h>
 #include <vector>
+#include <map>
 
 using namespace std;
 namespace ymat {
@@ -16,8 +16,7 @@ namespace ymat {
         ~YMInfo() {
             bgColor.clear();
             comps.clear();
-            imgSource.clear();
-            videoSource.clear();
+            layers.clear();
         }
         vector<float> bgColor;
         int width;
@@ -25,8 +24,8 @@ namespace ymat {
         int duration;
         int frameRate;
         shared_ptr<TargetComp> targetComp;
-        list<shared_ptr<Comp>> comps;
-        list<shared_ptr<ImgSource>> imgSource;
-        list<shared_ptr<VideoSource>> videoSource;
+        vector<shared_ptr<Comp>> comps;
+        //用于记录全局layer信息
+        map<int, shared_ptr<SimpleLayerInfo>> layers;
     };
 }

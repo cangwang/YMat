@@ -3,7 +3,7 @@
 # For more examples on how to use CMake, see https://github.com/android/ndk-samples.
 
 # Sets the minimum CMake version required for this project.
-cmake_minimum_required(VERSION 3.22.1)
+cmake_minimum_required(VERSION 3.10.2)
 
 # Declares the project name. The project name can be accessed via ${ PROJECT_NAME},
 # Since this is the top level CMakeLists.txt, the project name is also accessible
@@ -29,32 +29,39 @@ project("ymat")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/jniLibs/${ANDROID_ABI})
 include_directories(${CMAKE_SOURCE_DIR} src/main/cpp)
 
-add_library(ymat
-        SHARED
-        # List C/C++ source files with relative paths to this CMakeLists.txt.
-        src/main/cpp/ymat.cpp
-        src/main/cpp/egl/eglcore.cpp
-        src/main/cpp/player/ymatcontroller.cpp
-        src/main/cpp/player/ymatplayer.cpp
-        src/main/cpp/player/rendercontroller.cpp
-        src/main/cpp/layer/layer.cpp
-        src/main/cpp/layer/imagelayer.cpp
-        src/main/cpp/layer/videolayer.cpp
-        src/main/cpp/layer/textlayer.cpp
-        src/main/cpp/layer/vectorlayer.cpp
-        src/main/cpp/layer/shaderlayer.cpp
-        src/main/cpp/utils/shaderutil.cpp
-        src/main/cpp/utils/texcoordsutil.cpp
-        src/main/cpp/utils/vertexutil.cpp
-        src/main/cpp/utils/glfloatarray.cpp
-        src/main/cpp/utils/ymlog.cpp
-        src/main/cpp/bean/YMatConfig.cpp
-        src/main/cpp/render/render.cpp
-        src/main/cpp/render/mp4render.cpp
-        src/main/cpp/render/imagerender.cpp
-        src/main/cpp/render/evarender.cpp
-        src/main/cpp/render/vectorrender.cpp
-        )
+# 是否加入TGFX打包
+option(USE_TGFX "Enable or disable some feature" OFF)  # ON 打开 OFF关闭
+
+if (USE_TGFX)
+        add_definitions(-DUSE_TGFX)
+        #tgfx 2d
+        include_directories(${CMAKE_SOURCE_DIR}/src/main/cpp/include)
+        add_library(tgfx STATIC IMPORTED)
+        set_target_properties(tgfx PROPERTIES IMPORTED_LOCATION
+                ${CMAKE_SOURCE_DIR}/jniLibs/${ANDROID_ABI}/tgfx.a)
+        set(SOURCE_DIRS
+                "src/main/cpp/egl"
+                "src/main/cpp/player"
+                "src/main/cpp/layer"
+                "src/main/cpp/utils"
+                "src/main/cpp/bean"
+                "src/main/cpp/tgfx")
+else()
+        set(SOURCE_DIRS
+                "src/main/cpp/egl"
+                "src/main/cpp/player"
+                "src/main/cpp/layer"
+                "src/main/cpp/utils"
+                "src/main/cpp/bean")
+endif()
+
+# 使用 foreach 循环来收集所有源文件
+foreach(dir ${SOURCE_DIRS})
+        file(GLOB_RECURSE SOURCES ${dir}/*.cpp)
+        list(APPEND ALL_SOURCES ${SOURCES})
+endforeach()
+
+add_library(ymat SHARED src/main/cpp/ymat.cpp ${ALL_SOURCES})
 
 # Specifies libraries CMake should link to your target library. You
 # can link libraries from various origins, such as libraries defined in this
@@ -63,12 +70,25 @@ add_library(parson
         STATIC
         src/main/cpp/utils/parson.c)
 
-target_link_libraries(
-        ymat
-        # List libraries link to the target library
-        android
-        GLESv3
-        EGL
-        jnigraphics
-        parson
-        log)
+if(USE_TGFX)
+        target_link_libraries(
+                ymat
+                # List libraries link to the target library
+                tgfx
+                android
+                GLESv3
+                EGL
+                jnigraphics
+                parson
+                log)
+else()
+        target_link_libraries(
+                ymat
+                # List libraries link to the target library
+                android
+                GLESv3
+                EGL
+                jnigraphics
+                parson
+                log)
+endif()

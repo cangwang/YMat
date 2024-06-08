@@ -5,6 +5,7 @@
 #include <string>
 #include <GLES3/gl3.h>
 #include <GLES3/gl3ext.h>
+#include <utils/ymlog.h>
 //#include <GLES2/gl2.h>
 //#include <GLES2/gl2ext.h>
 

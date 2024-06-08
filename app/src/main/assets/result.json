@@ -1,0 +1,1245 @@
+{
+    "bgColor": [
+        0,
+        0,
+        0
+    ],
+    "width": 900,
+    "height": 1000,
+    "duration": 6,
+    "frameRate": 30,
+    "targetComp": {
+        "layers": [
+            {
+                "id": 18,
+                "type": "image",
+                "content": "前景.png",
+                "name": "前景.png",
+                "fillMode": 0,
+                "transform": {
+                    "anchorPoint": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                234.5,
+                                165,
+                                0
+                            ]
+                        }
+                    ],
+                    "position": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                692,
+                                850,
+                                0
+                            ]
+                        }
+                    ],
+                    "scale": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                100,
+                                100,
+                                100
+                            ]
+                        }
+                    ],
+                    "opacity": [
+                        {
+                            "inFrame": 0,
+                            "value": 100
+                        }
+                    ],
+                    "rotationZ": [
+                        {
+                            "inFrame": 0,
+                            "value": 0
+                        }
+                    ]
+                },
+                "isTrackMatte": false,
+                "width": 469,
+                "height": 330,
+                "inFrame": 0,
+                "outFrame": 180
+            },
+            {
+                "type": "ShapeLayer",
+                "id": 20,
+                "content": [
+                    {
+                        "type": "Path",
+                        "name": "形状 1",
+                        "blendMode": 1,
+                        "elements": {
+                            "shapeInfo": {
+                                "points": [
+                                    [
+                                        -36,
+                                        -240
+                                    ],
+                                    [
+                                        -36,
+                                        510
+                                    ],
+                                    [
+                                        174,
+                                        512
+                                    ],
+                                    [
+                                        114,
+                                        -160
+                                    ],
+                                    [
+                                        -36,
+                                        -240
+                                    ]
+                                ],
+                                "actions": [
+                                    0,
+                                    1,
+                                    1,
+                                    1,
+                                    1,
+                                    3
+                                ]
+                            },
+                            "strokeInfo": {
+                                "blendMode": 1,
+                                "color": [
+                                    0.71,
+                                    0,
+                                    1,
+                                    1
+                                ],
+                                "opacity": 100,
+                                "width": 6,
+                                "lineCap": 2,
+                                "lineJoin": 1,
+                                "miterLimit": 4,
+                                "dashesInfo": {
+                                    "dash": [
+                                        10,
+                                        10
+                                    ],
+                                    "offset": [
+                                        {
+                                            "inFrame": 0,
+                                            "value": 0
+                                        },
+                                        {
+                                            "inFrame": 179,
+                                            "value": 300,
+                                            "timeFunc": 0
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "transform": {
+                            "anchorPoint": [
+                                {
+                                    "inFrame": 0,
+                                    "value": [
+                                        0,
+                                        0
+                                    ]
+                                }
+                            ],
+                            "position": [
+                                {
+                                    "inFrame": 0,
+                                    "value": [
+                                        0,
+                                        0
+                                    ]
+                                }
+                            ],
+                            "scale": [
+                                {
+                                    "inFrame": 0,
+                                    "value": [
+                                        100,
+                                        100
+                                    ]
+                                }
+                            ],
+                            "rotationZ": [
+                                {
+                                    "inFrame": 0,
+                                    "value": 0
+                                }
+                            ],
+                            "opacity": [
+                                {
+                                    "inFrame": 0,
+                                    "value": 100
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "name": "形状图层 1",
+                "transform": {
+                    "anchorPoint": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                0,
+                                0,
+                                0
+                            ]
+                        }
+                    ],
+                    "position": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                450,
+                                500,
+                                0
+                            ]
+                        }
+                    ],
+                    "scale": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                100,
+                                100,
+                                100
+                            ]
+                        }
+                    ],
+                    "opacity": [
+                        {
+                            "inFrame": 0,
+                            "value": 100
+                        }
+                    ],
+                    "rotationZ": [
+                        {
+                            "inFrame": 0,
+                            "value": 0
+                        }
+                    ]
+                },
+                "isTrackMatte": false,
+                "width": 900,
+                "height": 1000,
+                "inFrame": 0,
+                "outFrame": 180
+            },
+            {
+                "type": "precomposition",
+                "name": "网格",
+                "id": 145,
+                "transform": {
+                    "anchorPoint": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                100,
+                                350,
+                                0
+                            ]
+                        }
+                    ],
+                    "position": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                506,
+                                588,
+                                0
+                            ]
+                        }
+                    ],
+                    "scale": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                103,
+                                125,
+                                103
+                            ]
+                        }
+                    ],
+                    "opacity": [
+                        {
+                            "inFrame": 0,
+                            "value": 100
+                        }
+                    ],
+                    "rotationX": [
+                        {
+                            "inFrame": 0,
+                            "value": -2
+                        }
+                    ],
+                    "rotationY": [
+                        {
+                            "inFrame": 0,
+                            "value": 0
+                        }
+                    ],
+                    "rotationZ": [
+                        {
+                            "inFrame": 0,
+                            "value": 0
+                        }
+                    ],
+                    "orientation": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                320,
+                                325,
+                                1
+                            ]
+                        }
+                    ]
+                },
+                "width": 200,
+                "height": 700,
+                "inFrame": 0,
+                "outFrame": 180,
+                "isTrackMatte": true
+            },
+            {
+                "type": "precomposition",
+                "name": "屏幕",
+                "id": 33,
+                "transform": {
+                    "anchorPoint": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                100,
+                                350,
+                                0
+                            ]
+                        }
+                    ],
+                    "position": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                506,
+                                588,
+                                0
+                            ]
+                        }
+                    ],
+                    "scale": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                103,
+                                125,
+                                103
+                            ]
+                        }
+                    ],
+                    "opacity": [
+                        {
+                            "inFrame": 0,
+                            "value": 100
+                        }
+                    ],
+                    "rotationX": [
+                        {
+                            "inFrame": 0,
+                            "value": -2
+                        }
+                    ],
+                    "rotationY": [
+                        {
+                            "inFrame": 0,
+                            "value": 0
+                        }
+                    ],
+                    "rotationZ": [
+                        {
+                            "inFrame": 0,
+                            "value": 0
+                        }
+                    ],
+                    "orientation": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                320,
+                                325,
+                                1
+                            ]
+                        }
+                    ]
+                },
+                "width": 200,
+                "height": 700,
+                "inFrame": 0,
+                "outFrame": 180,
+                "isTrackMatte": false,
+                "trackMatteLayer": 145,
+                "trackMatteType": 3
+            },
+            {
+                "id": 17,
+                "type": "image",
+                "content": "主楼.png",
+                "name": "主楼.png",
+                "fillMode": 0,
+                "transform": {
+                    "anchorPoint": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                276,
+                                430.5,
+                                0
+                            ]
+                        }
+                    ],
+                    "position": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                370,
+                                578,
+                                0
+                            ]
+                        }
+                    ],
+                    "scale": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                100,
+                                100,
+                                100
+                            ]
+                        }
+                    ],
+                    "opacity": [
+                        {
+                            "inFrame": 0,
+                            "value": 100
+                        }
+                    ],
+                    "rotationZ": [
+                        {
+                            "inFrame": 0,
+                            "value": 0
+                        }
+                    ]
+                },
+                "isTrackMatte": false,
+                "width": 552,
+                "height": 861,
+                "inFrame": 0,
+                "outFrame": 180
+            },
+            {
+                "id": 19,
+                "type": "image",
+                "content": "后景.png",
+                "name": "后景.png",
+                "fillMode": 0,
+                "transform": {
+                    "anchorPoint": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                353,
+                                135,
+                                0
+                            ]
+                        }
+                    ],
+                    "position": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                346,
+                                880,
+                                0
+                            ]
+                        }
+                    ],
+                    "scale": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                100,
+                                100,
+                                100
+                            ]
+                        }
+                    ],
+                    "opacity": [
+                        {
+                            "inFrame": 0,
+                            "value": 100
+                        }
+                    ],
+                    "rotationZ": [
+                        {
+                            "inFrame": 0,
+                            "value": 0
+                        }
+                    ]
+                },
+                "isTrackMatte": false,
+                "width": 706,
+                "height": 270,
+                "inFrame": 0,
+                "outFrame": 180
+            },
+            {
+                "id": 220,
+                "type": "precomposition",
+                "name": "烟花_bmp",
+                "isAlpha": true,
+                "transform": {
+                    "anchorPoint": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                450,
+                                500,
+                                0
+                            ]
+                        }
+                    ],
+                    "position": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                450,
+                                500,
+                                0
+                            ]
+                        }
+                    ],
+                    "scale": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                100,
+                                100,
+                                100
+                            ]
+                        }
+                    ],
+                    "opacity": [
+                        {
+                            "inFrame": 0,
+                            "value": 100
+                        }
+                    ],
+                    "rotationZ": [
+                        {
+                            "inFrame": 0,
+                            "value": 0
+                        }
+                    ]
+                },
+                "isTrackMatte": false,
+                "width": 900,
+                "height": 1000,
+                "inFrame": 0,
+                "outFrame": 180
+            },
+            {
+                "id": 16,
+                "type": "image",
+                "content": "bg.png",
+                "name": "bg.png",
+                "fillMode": 0,
+                "transform": {
+                    "anchorPoint": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                450,
+                                500,
+                                0
+                            ]
+                        }
+                    ],
+                    "position": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                450,
+                                500,
+                                0
+                            ]
+                        }
+                    ],
+                    "scale": [
+                        {
+                            "inFrame": 0,
+                            "value": [
+                                100,
+                                100,
+                                100
+                            ]
+                        }
+                    ],
+                    "opacity": [
+                        {
+                            "inFrame": 0,
+                            "value": 100
+                        }
+                    ],
+                    "rotationZ": [
+                        {
+                            "inFrame": 0,
+                            "value": 0
+                        }
+                    ]
+                },
+                "isTrackMatte": false,
+                "width": 900,
+                "height": 1000,
+                "inFrame": 0,
+                "outFrame": 180
+            }
+        ]
+    },
+    "comps": [
+        {
+            "id": 145,
+            "type": "vector",
+            "layers": [
+                {
+                    "id": 149,
+                    "type": "image",
+                    "content": "网格2.png",
+                    "name": "网格2.png",
+                    "fillMode": 0,
+                    "transform": {
+                        "anchorPoint": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    100,
+                                    350,
+                                    0
+                                ]
+                            }
+                        ],
+                        "position": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    100,
+                                    350,
+                                    0
+                                ]
+                            }
+                        ],
+                        "scale": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    100,
+                                    100,
+                                    100
+                                ]
+                            }
+                        ],
+                        "opacity": [
+                            {
+                                "inFrame": 0,
+                                "value": 100
+                            }
+                        ],
+                        "rotationZ": [
+                            {
+                                "inFrame": 0,
+                                "value": 0
+                            }
+                        ]
+                    },
+                    "isTrackMatte": false,
+                    "width": 200,
+                    "height": 700,
+                    "inFrame": 0,
+                    "outFrame": 180
+                }
+            ],
+            "bgColor": [
+                0.58,
+                0.58,
+                0.58
+            ],
+            "width": 200,
+            "height": 700
+        },
+        {
+            "id": 253,
+            "type": "video",
+            "content": "粒子_bmp.mp4",
+            "name": "粒子_bmp",
+            "bgColor": [
+                0,
+                0,
+                0
+            ],
+            "width": 200,
+            "height": 700,
+            "duration": 6,
+            "frameRate": 30
+        },
+        {
+            "id": 33,
+            "type": "vector",
+            "layers": [
+                {
+                    "id": 253,
+                    "type": "precomposition",
+                    "name": "粒子_bmp",
+                    "isAlpha": true,
+                    "transform": {
+                        "anchorPoint": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    100,
+                                    350,
+                                    0
+                                ]
+                            }
+                        ],
+                        "position": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    100,
+                                    350,
+                                    0
+                                ]
+                            }
+                        ],
+                        "scale": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    100,
+                                    100,
+                                    100
+                                ]
+                            }
+                        ],
+                        "opacity": [
+                            {
+                                "inFrame": 0,
+                                "value": 100
+                            }
+                        ],
+                        "rotationZ": [
+                            {
+                                "inFrame": 0,
+                                "value": 0
+                            }
+                        ]
+                    },
+                    "isTrackMatte": false,
+                    "width": 200,
+                    "height": 700,
+                    "inFrame": 0,
+                    "outFrame": 180
+                },
+                {
+                    "type": "ShapeLayer",
+                    "id": 89,
+                    "content": [
+                        {
+                            "type": "Rect",
+                            "name": "矩形 1",
+                            "blendMode": 1,
+                            "elements": {
+                                "rectInfo": {
+                                    "direction": 1,
+                                    "size": [
+                                        318,
+                                        538
+                                    ],
+                                    "position": [
+                                        0,
+                                        0
+                                    ],
+                                    "roundness": 0
+                                },
+                                "fillInfo": {
+                                    "blendMode": 1,
+                                    "color": [
+                                        1,
+                                        1,
+                                        1,
+                                        1
+                                    ],
+                                    "opacity": 100
+                                }
+                            },
+                            "transform": {
+                                "anchorPoint": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": [
+                                            0,
+                                            0
+                                        ]
+                                    }
+                                ],
+                                "position": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": [
+                                            -1,
+                                            -7
+                                        ]
+                                    }
+                                ],
+                                "scale": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": [
+                                            100,
+                                            100
+                                        ]
+                                    }
+                                ],
+                                "rotationZ": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": 0
+                                    }
+                                ],
+                                "opacity": [
+                                    {
+                                        "inFrame": 0,
+                                        "value": 100
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "name": "形状图层 1",
+                    "transform": {
+                        "anchorPoint": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        ],
+                        "position": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    104,
+                                    346,
+                                    0
+                                ]
+                            }
+                        ],
+                        "scale": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    145,
+                                    134.492753623188,
+                                    100
+                                ]
+                            }
+                        ],
+                        "opacity": [
+                            {
+                                "inFrame": 0,
+                                "value": 100
+                            }
+                        ],
+                        "rotationZ": [
+                            {
+                                "inFrame": 0,
+                                "value": 0
+                            }
+                        ]
+                    },
+                    "isTrackMatte": true,
+                    "width": 200,
+                    "height": 700,
+                    "inFrame": 64,
+                    "outFrame": 180
+                },
+                {
+                    "id": 88,
+                    "type": "video",
+                    "content": "preview.mp4",
+                    "name": "preview.mp4",
+                    "transform": {
+                        "anchorPoint": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    320,
+                                    180,
+                                    0
+                                ]
+                            }
+                        ],
+                        "position": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    124,
+                                    346,
+                                    0
+                                ]
+                            }
+                        ],
+                        "scale": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    236,
+                                    232.739130434783,
+                                    100
+                                ]
+                            }
+                        ],
+                        "opacity": [
+                            {
+                                "inFrame": 64,
+                                "value": 0
+                            },
+                            {
+                                "inFrame": 74,
+                                "value": 100,
+                                "timeFunc": 0
+                            }
+                        ],
+                        "rotationZ": [
+                            {
+                                "inFrame": 0,
+                                "value": 0
+                            }
+                        ]
+                    },
+                    "isTrackMatte": false,
+                    "trackMatteLayer": 89,
+                    "trackMatteType": 1,
+                    "width": 640,
+                    "height": 360,
+                    "inFrame": 64,
+                    "outFrame": 180
+                },
+                {
+                    "id": 79,
+                    "type": "video",
+                    "content": "temp_change_264_mid.mp4",
+                    "name": "temp_change_264_mid.mp4",
+                    "transform": {
+                        "anchorPoint": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    100,
+                                    350,
+                                    0
+                                ]
+                            }
+                        ],
+                        "position": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    100,
+                                    350,
+                                    0
+                                ]
+                            }
+                        ],
+                        "scale": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    100,
+                                    100,
+                                    100
+                                ]
+                            }
+                        ],
+                        "opacity": [
+                            {
+                                "inFrame": 0,
+                                "value": 100
+                            }
+                        ],
+                        "rotationZ": [
+                            {
+                                "inFrame": 0,
+                                "value": 0
+                            }
+                        ]
+                    },
+                    "isTrackMatte": false,
+                    "width": 200,
+                    "height": 700,
+                    "inFrame": 46,
+                    "outFrame": 180
+                },
+                {
+                    "type": "text",
+                    "id": 60,
+                    "name": "进入直播间 2",
+                    "textDocAttr": {
+                        "text": "进入直播间",
+                        "textColor": [
+                            0.36,
+                            0.54,
+                            1
+                        ],
+                        "font": "ZiZhiQuXiMaiTi",
+                        "fontFamily": "ZiZhiQuXiMaiTi",
+                        "fontSize": 19,
+                        "fontStyle": "",
+                        "fauxBold": false,
+                        "fauxItalic": false,
+                        "lineSpacing": 22.8000011444092,
+                        "wordSpacing": 92,
+                        "textAligment": 0
+                    },
+                    "content": "进入直播间",
+                    "transform": {
+                        "anchorPoint": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        ],
+                        "position": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    101.999237582334,
+                                    707.893235029929,
+                                    0
+                                ]
+                            },
+                            {
+                                "inFrame": 17,
+                                "value": [
+                                    101.999237582334,
+                                    31.8932350299295,
+                                    0
+                                ],
+                                "timeFunc": 2
+                            },
+                            {
+                                "inFrame": 60,
+                                "value": [
+                                    101.999237582334,
+                                    31.8932350299295,
+                                    0
+                                ],
+                                "timeFunc": 3
+                            },
+                            {
+                                "inFrame": 70,
+                                "value": [
+                                    -74.0007624176657,
+                                    31.8932350299295,
+                                    0
+                                ],
+                                "timeFunc": 3
+                            }
+                        ],
+                        "scale": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    526.289234632635,
+                                    526.289234632635,
+                                    100
+                                ]
+                            }
+                        ],
+                        "opacity": [
+                            {
+                                "inFrame": 18,
+                                "value": 0
+                            },
+                            {
+                                "inFrame": 22,
+                                "value": 100,
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 25,
+                                "value": 0,
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 29,
+                                "value": 100,
+                                "timeFunc": 0
+                            },
+                            {
+                                "inFrame": 39,
+                                "value": 0,
+                                "timeFunc": 0
+                            }
+                        ],
+                        "rotationZ": [
+                            {
+                                "inFrame": 0,
+                                "value": 0
+                            }
+                        ]
+                    },
+                    "isTrackMatte": false,
+                    "width": 200,
+                    "height": 700,
+                    "inFrame": 0,
+                    "outFrame": 180
+                },
+                {
+                    "type": "text",
+                    "id": 32,
+                    "name": "进入直播间",
+                    "textDocAttr": {
+                        "text": "进入直播间",
+                        "textColor": [
+                            0.36,
+                            0.54,
+                            1
+                        ],
+                        "font": "ZiZhiQuXiMaiTi",
+                        "fontFamily": "ZiZhiQuXiMaiTi",
+                        "fontSize": 19,
+                        "fontStyle": "",
+                        "fauxBold": false,
+                        "fauxItalic": false,
+                        "lineSpacing": 22.8000011444092,
+                        "wordSpacing": 92,
+                        "textAligment": 0
+                    },
+                    "content": "进入直播间",
+                    "transform": {
+                        "anchorPoint": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        ],
+                        "position": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    101.999237582334,
+                                    707.893235029929,
+                                    0
+                                ]
+                            },
+                            {
+                                "inFrame": 17,
+                                "value": [
+                                    101.999237582334,
+                                    31.8932350299295,
+                                    0
+                                ],
+                                "timeFunc": 2
+                            },
+                            {
+                                "inFrame": 60,
+                                "value": [
+                                    101.999237582334,
+                                    31.8932350299295,
+                                    0
+                                ],
+                                "timeFunc": 3
+                            },
+                            {
+                                "inFrame": 70,
+                                "value": [
+                                    -74.0007624176657,
+                                    31.8932350299295,
+                                    0
+                                ],
+                                "timeFunc": 3
+                            }
+                        ],
+                        "scale": [
+                            {
+                                "inFrame": 0,
+                                "value": [
+                                    526.289234632635,
+                                    526.289234632635,
+                                    100
+                                ]
+                            }
+                        ],
+                        "opacity": [
+                            {
+                                "inFrame": 0,
+                                "value": 100
+                            }
+                        ],
+                        "rotationZ": [
+                            {
+                                "inFrame": 0,
+                                "value": 0
+                            }
+                        ]
+                    },
+                    "isTrackMatte": false,
+                    "width": 200,
+                    "height": 700,
+                    "inFrame": 0,
+                    "outFrame": 180
+                }
+            ],
+            "bgColor": [
+                0,
+                0,
+                0
+            ],
+            "width": 200,
+            "height": 700
+        },
+        {
+            "id": 220,
+            "type": "video",
+            "content": "烟花_bmp.mp4",
+            "name": "烟花_bmp",
+            "bgColor": [
+                0,
+                0,
+                0
+            ],
+            "width": 900,
+            "height": 1000,
+            "duration": 6,
+            "frameRate": 30
+        }
+    ]
+}

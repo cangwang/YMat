@@ -1,8 +1,11 @@
 package com.yy.ymat.utils
 
 import android.media.MediaCodecList
+import android.media.MediaDataSource
 import android.media.MediaExtractor
 import android.media.MediaFormat
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.yy.ymat.bean.YMatMediaDataSource
 import kotlin.collections.HashMap
 
@@ -16,15 +19,17 @@ object YMMediaUtil {
 
     const val MIME_HEVC = "video/hevc"
 
-//    fun getExtractor(evaFile: IEvaFileContainer): MediaExtractor {
-//        val extractor = MediaExtractor()
-//        evaFile.setDataSource(extractor)
-//        return extractor
-//    }
-
     fun getExtractor(ymMediaSource: YMatMediaDataSource): MediaExtractor {
         val extractor = MediaExtractor()
-        extractor.setDataSource(ymMediaSource)
+        if (ymMediaSource.path.isEmpty()) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                extractor.setDataSource(ymMediaSource)
+            } else {
+                YMLog.e(TAG, "setDataSource error api below 23")
+            }
+        } else {
+            extractor.setDataSource(ymMediaSource.path)
+        }
         return extractor
     }
 

@@ -9,6 +9,9 @@
 #include <cstdarg> // 用于va_list, va_start, va_end等宏
 #include <mutex>
 
+#define YMLOGV(...)  ymat::YMLog::get()->i(LOG_TAG, __VA_ARGS__)
+#define YMLOGE(...)  ymat::YMLog::get()->e(LOG_TAG, __VA_ARGS__)
+#define YMLOGD(...)  ymat::YMLog::get()->d(LOG_TAG, __VA_ARGS__)
 
 using namespace std;
 namespace ymat {

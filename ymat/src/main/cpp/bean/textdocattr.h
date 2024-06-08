@@ -12,6 +12,10 @@ namespace ymat {
     public:
         ~TexDocAttr() {
             textColor.clear();
+            text.clear();
+            font.clear();
+            fontFamily.clear();
+            fontStyle.clear();
         }
         string text;
         vector<float> textColor;

@@ -29,6 +29,7 @@ object YMatThread {
         thread?.apply {
             thread.quitSafely()
         }
+
         return null
     }
 }

@@ -2,11 +2,8 @@
 // Created by asus on 2022/4/17.
 //
 #include "shaderutil.h"
-#include <android/log.h>
 
 #define LOG_TAG "ShareUtil"
-#define ELOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
-#define ELOGV(...) __android_log_print(ANDROID_LOG_VERBOSE, LOG_TAG, __VA_ARGS__)
 
 GLuint ShaderUtil::createProgram(string vertexSource, string fragmentSource) {
     GLuint vertexShaderHandle = compileShader(GL_VERTEX_SHADER, vertexSource.c_str());
@@ -35,7 +32,7 @@ GLuint ShaderUtil::compileShader(GLenum shaderType, const char* shaderSource) {
             if(infoLen >1){
                 char *infoLog= (char*)malloc(sizeof(char*) *infoLen);
                 glGetShaderInfoLog(shaderHandle,infoLen,NULL,infoLog);
-                ELOGE("Error compiling shader:[%s]",infoLog);
+                YMLOGE("Error compiling shader:[%s]",infoLog);
                 free(infoLog);
             }
             glDeleteShader(shaderHandle);
@@ -48,10 +45,10 @@ GLuint ShaderUtil::compileShader(GLenum shaderType, const char* shaderSource) {
         if (infoLen > 1) {
             char *infoLog= (char*)malloc(sizeof(char*) *infoLen);
             glGetShaderInfoLog(shaderHandle,infoLen,NULL,infoLog);
-            ELOGE("Error create shader:[%s]", infoLog);
+            YMLOGE("Error create shader:[%s]", infoLog);
             free(infoLog);
         }
-        ELOGE("Error create shader");
+        YMLOGE("Error create shader");
     }
     return 0;
 }
@@ -59,7 +56,7 @@ GLuint ShaderUtil::compileShader(GLenum shaderType, const char* shaderSource) {
 GLuint ShaderUtil::createAndLinkProgram(GLuint vertexShaderHandle, GLuint fragmentShaderHandle) {
     GLuint iProgId = glCreateProgram();
     if (iProgId == 0){
-        ELOGE("create program failed");
+        YMLOGE("create program failed");
         return 0;
     }
     glAttachShader(iProgId,vertexShaderHandle);
@@ -76,7 +73,7 @@ GLuint ShaderUtil::createAndLinkProgram(GLuint vertexShaderHandle, GLuint fragme
         if (infoLen > 1) {
             char *infoLog = (char *) malloc(sizeof(char) * infoLen);
             glGetProgramInfoLog(iProgId, infoLen, nullptr, infoLog);
-            ELOGE("loadProgram failed: %s", infoLog);
+            YMLOGE("loadProgram failed: %s", infoLog);
             free(infoLog);
         }
 
